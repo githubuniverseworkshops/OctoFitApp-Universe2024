@@ -1,4 +1,4 @@
-# Story to develpp a fitness application with GitHub Copilot now begins!
+# Story to develop a fitness application with GitHub Copilot now begins!
 
 ![Story of Fitness application](images/fitness-app.jpg)
 
