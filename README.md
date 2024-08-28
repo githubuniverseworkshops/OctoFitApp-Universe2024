@@ -13,7 +13,7 @@ Without further ado, let's get started.
 ## Table of Contents
 
 1. [Story](contents/1_Story)
-2. [Prerrequistes](contents/2_Prerequisites)
+2. [Prerrequistes, expectations, and assumptions](contents/2_Prerequisites)
 3. [Getting started - Front end setup with HTML and CSS](contents/3_GettingStarted)
 4. Prettifying the design with Bootstrap
 5. Adding functionality with ReactJS

@@ -1,16 +1,22 @@
-# Prerequisites and assumptions
+# Prerequisites, expectations, and assumptions
 
-## Prerequisites for attendees:
+## Prerequisites for attendees
 - GitHub Copilot license 
 - Primary IDE: Visual Studio Code
 - Plugins installed
 - Operating System: Shouldn’t matter
 - GitHub Account
 
-## Technology stacks:
+## Technology stacks
 - NodeJS: Version xxx
 - ReactJS: Version xxx
 - Python Django: Version xxx
+
+## Expectations
+
+By the end of this guide, you will be expected to build a full stack application. However, due to some technical difficulties, it is likely that you will not be able to build everything in 40 minutes. However, you will still have a guide at the end to try on your own.
+
+## Assumptions
 
 Two approaches:
 Ask Copilot to generate a lot of boiler plate codes first time:
