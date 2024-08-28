@@ -1,4 +1,4 @@
-# Story about Thanos developing a fitness application now begins!
+# Story to develpp a fitness application with GitHub Copilot now begins!
 
 ![Story of Fitness application](images/fitness-app.jpg)
 
