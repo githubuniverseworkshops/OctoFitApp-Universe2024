@@ -26,4 +26,4 @@ Bad for: Real project
 
 We will choose the second approach because we want to make it a more procedural step-by-step approach.
 
-[Previous: Story :back:](../1_Story/) | [Next: Getting started :soon:](../3_Getting_started)
+[:back: Previous: Story](../1_Story/) | [Next: Getting started :soon:](../3_Getting_started)
