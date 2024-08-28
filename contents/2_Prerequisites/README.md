@@ -1,4 +1,4 @@
-# Prerequisites
+# Prerequisites and assumptions
 
 ## Prerequisites for attendees:
 - GitHub Copilot license 
@@ -12,4 +12,18 @@
 - ReactJS: Version xxx
 - Python Django: Version xxx
 
-Next: Assumptions and tips :soon:
+Two approaches:
+Ask Copilot to generate a lot of boiler plate codes first time:
+PROS: Create a lot of structures that we probably need later
+CONS: Probably need to make a bunch of changes to make it work. Hard to make it into a tutorial.
+Good for: When you actually work for the real project
+Bad for: Make it a tutorial like format
+Ask Copilot to make incremental, graduate changes
+PROS: More predictable and easy to make it procedural steps
+CONS: Can take more time and strategy later
+Good for: Tutorial
+Bad for: Real project
+
+We will choose the second approach because we want to make it a more procedural step-by-step approach.
+
+[Previous: Story :back:](Front end) | [Next: Starting with end :soon:](Front end)
