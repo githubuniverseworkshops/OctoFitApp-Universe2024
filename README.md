@@ -1,5 +1,6 @@
-# OctoFitApp-Universe2024
-OctoFit App Universe 2024
+# Build a full stack fitness application with GitHub Copilot in 40 minutes
+
+![Story of Fitness application](images/cover.jpg)
 
 Welcome to a custom Copilot workshop prepared by **GitHub’s Expert Service team**! 
 
