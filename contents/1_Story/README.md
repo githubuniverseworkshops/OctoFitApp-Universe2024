@@ -8,4 +8,4 @@ Thanos quickly gathered his team and sketched out a plan. OctoFit needed to hand
 
 In this workshop, you are going to assume to be the lead developer Thanos. You will be responsible for building the application with GitHub Copilot’s help. Good luck!
 
-[Next: Prerequisites :soon:](2_Prerequisites)
+[Next: Prerequisites :soon:](../2_Prerequisites)
