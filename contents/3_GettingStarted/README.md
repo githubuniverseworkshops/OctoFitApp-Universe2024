@@ -22,4 +22,17 @@ The reason why I asked to ignore technology stack is because I want to keep it s
 > TIP: One challenging thing about GitHub Copilot is that it is very generative. Thus, it is hard to make a consistent, repeatable tutorial unless you try to keep it simple and very progressive.
 Once you get the result, try to read to see how you can approach creating our fitness application. Your result still might look different from mine, and that is perfectly okay!
 
-Now, let’s move onto the next prompt through GitHub Copilot Chat.
+Once you get the result, try to read to see how you can approach creating our fitness application. Your result still might look different from mine, and that is perfectly okay!
+
+Now, let’s move onto the next prompt through GitHub Copilot Chat. This time, we want to generate some assets to create our web pages. HTML, which stands for Hyper Text Markup Language, is the language of the web, though it is not exactly a programming language, and CSS, which stands for Cascading Style Sheet, is the web language for the design. Thus, we will ask to generate these two. Let’s proceed with the following prompts. 
+
+`Now, how can I add HTML and CSS on these?`
+
+![Ask Copilot for HTML and CSS - Page 1](images/2_1_AskGenerateHTMLCSS.jpg)
+
+![Ask Copilot for HTML and CSS - Page 2](images/2_2_AskGenerateHTMLCSS.jpg)
+
+As you can see, this prompt will generate some examples of HTML and CSS lines that you can use. Again, your result might look different from mine, and that is perfectly okay!
+
+
+
