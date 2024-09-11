@@ -5,6 +5,9 @@ In this section, we will start by setting up the face of our OctoFit application
 ## Goals/Outcome:
 - Understand the basic strategies around designing the OctoFit app by asking GitHub Copilot Chat
 - Start getting the feel for OctoFit app by generating HTML and CSS resources
+- See a front-end page with a greeting message
+
+![OctoFit App with front end](images/0_FinalResult.jpg)
 
 Let’s start with the basic front end development with the help of GitHub Copilot. Although we can start using the built-in in-file Copilot suggestion, we will initiate this by using GitHub Copilot Chat.
 
