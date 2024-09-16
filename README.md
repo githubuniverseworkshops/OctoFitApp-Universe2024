@@ -2,9 +2,9 @@
 
 ![Story of Fitness application](images/cover.jpg)
 
-Welcome to a custom Copilot workshop prepared by **GitHub’s Expert Service team**! 
+Welcome to a custom Copilot workshop prepared by **GitHub’s Expert Service team**!
 
-In this workshop, 
+In this workshop,
 
 Because this workshop involves several technology stacks, it is essential that you need to meet prerequisites as outlined from Before getting started if you want to follow along. Otherwise, you can always listen to what GitHub Expert Service team's instructor demo to see how it works in practice.
 
