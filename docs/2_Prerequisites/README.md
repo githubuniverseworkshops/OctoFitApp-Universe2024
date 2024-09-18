@@ -1,6 +1,7 @@
 # Prerequisites, expectations, and assumptions
 
 ## Prerequisites for attendees
+
 - GitHub Copilot license 
 - Primary IDE: Visual Studio Code
 - Plugins installed
@@ -8,6 +9,7 @@
 - GitHub Account
 
 ## Technology stacks
+
 - NodeJS: Version xxx
 - ReactJS: Version xxx
 - Python Django: Version xxx
