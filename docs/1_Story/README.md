@@ -81,4 +81,4 @@ Join us for this exciting journey into the future of software development, where
 
 In this workshop, you are going to assume to be the lead developer. You will be responsible for building the application with GitHub Copilot’s help. Good luck!
 
-[Next: Prerequisites :soon:](../2_Prerequisites)
+[Next: Prerequisites, assumptions, and development environment setup](../2_Prerequisites)
