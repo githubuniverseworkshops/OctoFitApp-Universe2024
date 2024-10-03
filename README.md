@@ -4,16 +4,16 @@
 
 Welcome to a custom Copilot workshop prepared by the **GitHub’s Expert Service team**!
 
-This workshop involves several technology stacks, therefore it is essential that you need to meet prerequisites as outlined in the prerequisites getting started if you want to follow along. Otherwise, you can always listen to what GitHub Expert Service team's instructor demo to see how it works in practice.
+This workshop involves several technology stacks, therefore it is essential that you need to meet prerequisites as outlined in the prerequisites getting started if you want to follow along. Otherwise, please follow along and listen to what the GitHub Expert Service team's instructor demo to see how it works in practice.
 
 ## Objectives and key takeaways
 
 ### Objectives
 
 - Walk through a real-world use case:
-  - Building a fitness app from end to end.
+  - Building a fitness tracker app from end to end.
   - Create a full stack of technologies for the infrastructure, frontend, and backend.
-  - Using the latest Copilot features.
+  - Using the latest GitHub Copilot features.
 
 ### Key takeaways
 
