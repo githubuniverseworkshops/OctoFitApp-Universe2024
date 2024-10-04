@@ -1,22 +1,23 @@
-# Prerequisites, expectations, and assumptions
+# Prerequisites, assumptions, and development environment setup
 
-## Prerequisites for attendees
+## Prerequisites
 
-- GitHub Copilot license 
-- Primary IDE: Visual Studio Code
-- Plugins installed
-- Operating System: Shouldn’t matter
-- GitHub Account
+- GitHub account
+- GitHub Copilot license
 
-## Technology stacks
+## OctoFit Tracker technology stack
 
 - NodeJS: Version xxx
 - ReactJS: Version xxx
 - Python Django: Version xxx
 
-## Expectations
+## Developer environment setup
 
-By the end of this guide, you will be expected to build a full stack application. However, due to some technical difficulties, it is likely that you will not be able to build everything in 40 minutes. However, you will still have a guide at the end to try on your own.
+### Go to the code tab
+![code tab](../../images/code-tab.png)
+
+### Create a GitHub codespace
+![create a GitHub codespace](../../images/codespace-create.png)
 
 ## Assumptions
 

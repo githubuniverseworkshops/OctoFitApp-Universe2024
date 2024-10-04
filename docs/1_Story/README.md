@@ -1,11 +1,84 @@
-# Story to develop a fitness application with GitHub Copilot now begins!
+# Your journey to develop a fitness tracker with GitHub Copilot now begins!
 
-![Story of Fitness application](../../images/octofitapp.png)
+![OctoFit Tracker](../../images/octofit-tracker.png)
 
-Fitness app “OctoFit Tracker” tracks the exercise on a personal level, competes with others (rank scoring), and suggests some fitness activities. This app has a beautiful interface that tracks the user’s fitness activities, login interface, and provides personalization options. It has a way to save that data in the backend, which can compete with other fitness buddies. The purpose of this app is to keep everyone motivated to login their activities within their own teams – there are several different teams within the app.
+Here's a reworked version of the workshop concept that's more suitable for a conference demo and attendee workshop:
 
-As the chief programmer, you are assigned to design this application in less than a week and show a POC to the CEO of the OctoFit Corporation. You were not sure what to do, but you heard about the great results of launching the applications ASAP through this thing called GitHub Copilot. You start building the application with technology stacks that you are familiar with. You decided to make it as a web application, though extensible later to mobile app, so you will use ReactJS for the front end, Python Django so we can leverage REST API as the backend, and MongoDB as the main database with possible in-memory data storage like Redis or Kafka. You also want to start testing out in a local environment, so Docker container will be good, but it will be later deployed to Microsoft Azure as the container app, and you want to automate the deployment through GitHub Actions in addition to leveraging something like Terraform.
+## OctoFit Tracker: Building a Fitness App with GitHub Copilot
+
+Welcome to the OctoFit Tracker workshop! In this hands-on session, you'll step into the shoes of a lead developer tasked with creating a cutting-edge fitness tracker in record time. We'll leverage the power of GitHub Copilot to rapidly develop a functional prototype of OctoFit Tracker, a social fitness app that encourages users to stay active and compete with their peers.
+
+### Workshop Overview
+
+In this workshop, you'll:
+
+1. Set up a development environment using GitHub Codespaces
+2. Use GitHub Copilot to accelerate development across multiple technologies
+3. Build key components of the OctoFit Tracker app
+4. Learn best practices for working with AI-assisted coding tools
+
+### Application Features
+
+OctoFit Tracker will include:
+
+- User authentication and profiles
+- Activity logging and tracking
+- Team creation and management
+- Competitive leaderboards
+- Personalized workout suggestions
+
+### Technology Stack
+
+We'll be using a modern web application stack:
+
+- **Frontend**: React.js
+- **Backend**: Python with Django REST Framework
+- **Database**: MongoDB
+- **Development Environment**: GitHub Codespaces
+
+### Workshop Structure
+
+1. **Introduction and Setup of prerequisites**
+   - Overview of OctoFit Tracker concept
+   - Setting up GitHub Codespaces
+
+2. **Rapid Prototyping with GitHub Copilot**
+   - Creating project structure
+   - Generating boilerplate code
+   - Implementing basic models and views
+
+3. **Building Core Features**
+   - User authentication
+   - Activity logging API
+   - Team management
+   - Leaderboard functionality
+
+4. **Frontend Development**
+   - Setting up React components
+   - Implementing responsive UI
+   - Connecting to backend APIs
+
+5. **Advanced Features and Optimization**
+   - Adding personalized workout suggestions
+   - Implementing caching with Redis
+   - Optimizing database queries
+
+6. **Wrap-up and Q&A**
+   - Reviewing what we've built
+   - Discussing best practices and lessons learned
+   - Q&A session
+
+### Key Takeaways
+
+By the end of this workshop, attendees will:
+
+- Gain hands-on experience with GitHub Copilot in a real-world scenario
+- Learn strategies for effective AI-assisted development
+- Understand how to leverage Copilot across different languages and frameworks
+- Develop a functional prototype of a modern web application
+
+Join us for this exciting journey into the future of software development, where we'll harness the power of generative AI with GitHub Copilot to build OctoFit Tracker in record time!
 
 In this workshop, you are going to assume to be the lead developer. You will be responsible for building the application with GitHub Copilot’s help. Good luck!
 
-[Next: Prerequisites :soon:](../2_Prerequisites)
+[Next: Prerequisites, assumptions, and development environment setup](../2_Prerequisites)
