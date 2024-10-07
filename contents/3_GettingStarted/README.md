@@ -43,3 +43,11 @@ If you hover over the code, for example this HTML code block, you will see a pop
 We want to select the `Insert into New File` that will appear when you click `...` icon for more options.
 
 That will create a new file tab with copied code block. Save the file with a name `index.html`.
+
+You probably want to create a new directory or open a directory that is dedicated for this project. For me, I named it `OctoFit`.
+
+![Save the file](images/4_SaveFile.jpg)
+
+Do the same for your CSS file. You can create a CSS file within the `css` folder like this.
+
+![HTML Structure](images/5_HTMLStructure.jpg)
