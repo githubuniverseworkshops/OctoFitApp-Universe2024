@@ -34,5 +34,12 @@ Now, let’s move onto the next prompt through GitHub Copilot Chat. This time, w
 
 As you can see, this prompt will generate some examples of HTML and CSS lines that you can use. Again, your result might look different from mine, and that is perfectly okay!
 
+How can we leverage these files? We can, of course, create new files and copy-and-paste those contents. But instead of doing that, GitHub Copilot Chat has built-in user interface buttons that can make those steps easier.
 
+If you hover over the code, for example this HTML code block, you will see a popup menu shows up giving you different option like this.
 
+![Popup Menu for Code Block](images/3_OptionsCopilotChat.jpg)
+
+We want to select the `Insert into New File` that will appear when you click `...` icon for more options.
+
+That will create a new file tab with copied code block. Save the file with a name `index.html`.
