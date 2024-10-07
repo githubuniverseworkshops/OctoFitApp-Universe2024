@@ -65,7 +65,7 @@ If you open up our `index.html` file, it might look something like this. Yours m
 
 We are ready to proceed with our next step. If you want to keep your files as close as possible or have missed some steps, we have provided the sample files where you can download our files.
 
-[::open_file_folder: Exercise 1 - Sample files](../../exercises/exercise1/sample-files/)
+[:open_file_folder: Exercise 1 - Sample files](../../exercises/exercise1/sample-files/)
 
 Please download the files there if you want to keep your project structure as close as possible.
 
