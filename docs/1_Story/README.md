@@ -24,7 +24,7 @@ OctoFit Tracker will include:
 - User authentication and profiles
 - Activity logging and tracking
 - Team creation and management
-- Competitive leaderboards
+- Competitive leader boards
 - Personalized workout suggestions
 
 ### Technology Stack
@@ -51,7 +51,7 @@ We'll be using a modern web application stack:
    - User authentication
    - Activity logging API
    - Team management
-   - Leaderboard functionality
+   - Leader board functionality
 
 4. **Frontend Development**
    - Setting up React components
