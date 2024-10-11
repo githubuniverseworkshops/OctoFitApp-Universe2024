@@ -7,3 +7,5 @@ setup a python virtual environment and install requirements specified in #file o
 ```
 
 ![python venv and dependencies](./5_1_PythonVenvDeps.png)
+
+[Back :: MongoDB install and setup - ](../4_MongoDBInstallSetup) | [Next :: Getting started - ](../4_MongoDBInstallSetup)

@@ -1,6 +1,5 @@
 # MongoDB install and setup
 
-
 ## Use Copilot Chat and paste the following
 
 ```
@@ -12,3 +11,5 @@ No need to import the GPG-KEY
 ```
 
 ![mongodb install setup](./4_1_mongodbSetup.png)
+
+[Back :: Previous: Getting started](../3_GettingStarted) | [Next :: Python virtual environment and dependencies - ](../5_PythonVenv)

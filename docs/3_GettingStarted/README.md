@@ -41,14 +41,4 @@ Important to avoid using public code and we do NOT need to initialize the git re
 
 ![octofit-tracker app setup](./3_3_OctFit-Tracker-Setup.png)
 
-## MongoDB install and setup
-
-```
-Install mongo db, start it, and enable to start when the system starts using the service command and NOT the systemctl command and do NOT enable with update-rc.d
-
-No need to create a list file for MongoDB
-
-No need to import the GPG-KEY
-```
-
-![mongodb install setup](../../images/3_4_mongodbSetup.png)
+[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: MongoDB install and setup - ](../4_MongoDBInstallSetup)

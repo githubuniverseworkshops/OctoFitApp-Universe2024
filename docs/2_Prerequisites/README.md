@@ -1,4 +1,4 @@
-# Prerequisites, assumptions, and development environment setup
+# Prerequisites and development environment setup
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@
 
 ## Developer environment setup
 
-### Option 1: Using a Copilot + Codespace
+### Option 1: Using a Copilot + Codespaces
 
 *Note: this is what we are using for the GitHub Universe workshop*
 
@@ -28,4 +28,4 @@
 - If you choose this option we recommend using VSCode as your IDE, but this workshop is not limited to VSCode
 - URL for REACT and Django will be `http://localhost` or `http://127.0.0.1`
 
-[:back: Previous: Story](../1_Story) | [Next: Getting started - Front end setup with HTML and CSS :soon:](../3_GettingStarted)
+[Back :: Previous: Story](../1_Story) | [Next :: Getting started](../2_Prequisites)
