@@ -13,26 +13,19 @@
 
 ## Developer environment setup
 
-### Go to the code tab
-![code tab](../../images/code-tab.png)
+### Option 1: Using a Copilot + Codespace
 
-### Create a GitHub codespace
-![create a GitHub codespace](../../images/codespace-create.png)
+*Note: this is what we are using for the GitHub Universe workshop*
 
-## Assumptions
+#### Go to the code tab
+![code tab](./2_1_code-tab.png)
 
-Two approaches:
-Ask Copilot to generate a lot of boiler plate codes first time:
-PROS: Create a lot of structures that we probably need later
-CONS: Probably need to make a bunch of changes to make it work. Hard to make it into a tutorial.
-Good for: When you actually work for the real project
-Bad for: Make it a tutorial like format
-Ask Copilot to make incremental, graduate changes
-PROS: More predictable and easy to make it procedural steps
-CONS: Can take more time and strategy later
-Good for: Tutorial
-Bad for: Real project
+#### Create a GitHub codespace
+![create a GitHub codespace](./2_1_codespace-create.png)
 
-We will choose the second approach because we want to make it a more procedural step-by-step approach.
+### Option 2: Use your IDE of choice
+
+- If you choose this option we recommend using VSCode as your IDE, but this workshop is not limited to VSCode
+- URL for REACT and Django will be `http://localhost` or `http://127.0.0.1`
 
 [:back: Previous: Story](../1_Story) | [Next: Getting started - Front end setup with HTML and CSS :soon:](../3_GettingStarted)
