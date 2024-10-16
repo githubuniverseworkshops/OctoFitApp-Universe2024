@@ -3,7 +3,10 @@
 ## Use Copilot Chat and paste the following
 
 ```text
-Install mongo db, start it, and enable to start when the system starts using the service command and NOT the systemctl command and do NOT enable with update-rc.d
+Provide steps to install mongodb, start it, and enable it at startup using sudo service commands and init.d
+
+example:
+sudo ln -s /etc/init.d/mongodb /etc/rc0.d/K01mongodb
 
 No need to create a list file for MongoDB
 
@@ -12,4 +15,4 @@ No need to import the GPG-KEY
 
 ![mongodb install setup](./4_1_mongodbSetup.png)
 
-[Back :: Previous: Getting started](../3_GettingStarted) | [Next :: Python virtual environment and dependencies - ](../5_PythonVenv)
+[Back :: Previous: Getting started](../3_GettingStarted) | [Next :: TBD](../5_PythonVenv)
