@@ -4,12 +4,11 @@ In this section, we will start by setting up the face of our OctoFit application
 
 > TIP: One challenging thing about GitHub Copilot is that it is very generative. Thus, it is hard to make a consistent, repeatable tutorial unless you try to keep it simple and very progressive.
 
-
 ## Explain to GitHub Copilot the goals and steps
 
 It is important to lay out a plan and provide details 
 
-```
+```text
 I want to build an OctoFit Tracker app that will include the following:
 
 - User authentication and profiles 
