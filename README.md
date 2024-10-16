@@ -26,8 +26,6 @@ Without further ado, let's get started.
 ## Table of Contents
 
 1. [Story](docs/1_Story)
-2. [Prerequisites, expectations, and assumptions](docs/2_Prerequisites)
-3. [Getting started - front end setup with HTML and CSS](docs/3_GettingStarted)
-4. Prettifying the design with Bootstrap
-5. Adding functionality with ReactJS
-6. Adding a backend with NodeJS
+2. [Prerequisites and development environment setup](docs/2_Prerequisites)
+3. [Getting started - app frontend and backend creation](docs/3_GettingStarted)
+4. [MongoDB install and setup](docs/4_MongoDBInstallSetup/)

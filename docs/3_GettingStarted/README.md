@@ -1,4 +1,4 @@
-# Getting started 
+# Getting started
 
 In this section, we will start by setting up the face of our OctoFit application by building the front end page. To do that, we will keep it as simple as possible for now. We need resources like HTML and CSS to start decorating first, and we will later modify the page to extend the functionalities.
 
