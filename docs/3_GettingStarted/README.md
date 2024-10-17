@@ -12,18 +12,21 @@ It is important to lay out a plan and provide details
 I want to build an OctoFit Tracker app that will include the following:
 
 * User authentication and profiles
-* Activity logging and tracking 
-* Team creation and management 
-* Competitive leader boards 
-* Personalized workout suggestions in one app 
+* Activity logging and tracking
+* Team creation and management
+* Competitive leader boards
+* Personalized workout suggestions
 
-I want to use React.js for the frontend. I want to use Python with Django REST Framework for the backend and Mongo DB as the database to store data.
+It should be in one app
 
-Create the frontend and backend in the octofit-tracker directory of this repository
+generate instructions in this order
 
-the octofit-tracker/backend directory will store the django app with no subdirectories
-
-the octofit-tracker/frontend directory will store the react app with no subdirectories
+ 1. Create the frontend and backend in the octofit-tracker directory of this repository in one command
+    a. the octofit-tracker/backend directory will store the django app with no subdirectories
+    b. the octofit-tracker/frontend directory will store the react app with no subdirectories
+ 2. setup python venv and install octofit-tracker/requirements.txt
+ 3. Install and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
+ 4. Create the django app directly in the directory octofit_tracker/backend
 
 Use a Python virtual environment and install all python dependencies from file octofit-tracker/requirements.txt in this workspace
 
