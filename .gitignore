@@ -3,10 +3,6 @@
 # Virtual Environment
 venv/
 
-# octofit backend
-octofit/
-manage.py
-app/
-
-# octofit frontend
-frontend
+# octofit tracker app frontend and backend
+backend/
+frontend/
