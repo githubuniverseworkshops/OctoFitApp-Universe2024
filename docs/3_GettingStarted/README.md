@@ -6,7 +6,7 @@ In this section, we will start by setting up the face of our OctoFit application
 
 ## Explain to GitHub Copilot the goals and steps
 
-It is important to lay out a plan and provide details 
+It is important to lay out a plan and provide details. Type the following prompt:
 
 ```text
 I want to build an OctoFit Tracker app that will include the following:
@@ -49,4 +49,4 @@ Important to avoid using public code and we do NOT need to initialize the git re
 
 ![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)
 
-[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: MongoDB install and setup](../4_BackendSettingsPopulateData)
+[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: MongoDB install and setup](../4_BackendSettings)

@@ -12,6 +12,6 @@ In our next steps lets think step by step and setup the following in this order
 
 ![octofit tracker backend settings](./4_1_OctoFitTrackerBackendSettings.png)
 ![create models serializers](./4_2_CreateModelsViewsSerializers.png)
-![backend urls populate data](./4_3_OctoFitAppBackendUrlsPopulate.png)
+![backend urls populate data](./4_3_OctoFitAppBackendUrls.png)
 
-[Back :: Previous: Getting started](../3_GettingStarted) | [Next :: TBD](../5_PythonVenv)
+[Back :: Previous: Getting started](../3_GettingStarted) | [Next :: Populate database with data via manage.py](../5_PopulateDBwData)
