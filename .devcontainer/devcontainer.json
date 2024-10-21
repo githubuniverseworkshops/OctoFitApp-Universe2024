@@ -17,6 +17,7 @@
         ]}
     },
     "forwardPorts": [
+        3000, // React default port
         8000, // Django default port
         27017 // MongoDB default port
     ]
