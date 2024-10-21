@@ -21,76 +21,49 @@ In our next steps lets think step by step and setup the following in this order
 ```python
 # FILE: octofit-tracker/backend/octofit_tracker/models.py
 
-from django.core.management.base import BaseCommand
-from octofit_tracker.models import User, Team, Activity, Leaderboard, Workout
+from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
+from djongo import models as djongo_models
 
-class Command(BaseCommand):
-    help = 'Populate the database with sample data'
+class User(AbstractUser):
+    id = djongo_models.ObjectIdField(primary_key=True)
+    groups = models.ManyToManyField(
+        Group,
+        related_name='octofit_users',
+        blank=True,
+        help_text='The groups this user belongs to.',
+        verbose_name='groups',
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name='octofit_users_permissions',
+        blank=True,
+        help_text='Specific permissions for this user.',
+        verbose_name='user permissions',
+    )
 
-    def handle(self, *args, **kwargs):
-        user1 = User.objects.create(
-            username='user1',
-            email='user1@example.com',
-            password='password'
-        )
-        user2 = User.objects.create(
-            username='user2',
-            email='user2@example.com',
-            password='password'
-        )
+class Team(models.Model):
+    id = djongo_models.ObjectIdField(primary_key=True)
+    name = models.CharField(max_length=100)
+    members = models.ManyToManyField(User)
 
-        team_member1 = {
-            'id': str(user1.id),
-            'user': user1.to_dict()
-        }
-        team_member2 = {
-            'id': str(user2.id),
-            'user': user2.to_dict()
-        }
+class Activity(models.Model):
+    id = djongo_models.ObjectIdField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    activity_type = models.CharField(max_length=50)
+    duration = models.DurationField()
+    timestamp = models.DateTimeField(auto_now_add=True)
 
-        team1 = Team.objects.create(
-            name='team1',
-            members=[team_member1, team_member2]
-        )
-        team2 = Team.objects.create(
-            name='team2',
-            members=[team_member2]
-        )
+class Workout(models.Model):
+    id = djongo_models.ObjectIdField(primary_key=True)
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    suggested_duration = models.DurationField()
 
-        Activity.objects.create(
-            user=user1,
-            activity_type='Running',
-            duration=30
-        )
-        Activity.objects.create(
-            user=user2,
-            activity_type='Cycling',
-            duration=45
-        )
-
-        Leaderboard.objects.create(
-            user=user1,
-            score=100
-        )
-        Leaderboard.objects.create(
-            user=user2,
-            score=150
-        )
-
-        Workout.objects.create(
-            user=user1,
-            workout_type='Strength',
-            duration=60
-        )
-        Workout.objects.create(
-            user=user2,
-            workout_type='Cardio',
-            duration=40
-        )
-
-        self.stdout.write(
-            self.style.SUCCESS('Successfully populated the database with sample data')
-        )
+class Leaderboard(models.Model):
+    id = djongo_models.ObjectIdField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    total_points = models.IntegerField()
 ```
 
 #### serializers.py

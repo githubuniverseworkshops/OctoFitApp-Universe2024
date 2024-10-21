@@ -28,75 +28,34 @@ Let's use manage.py to get everything setup we need to create init.py for popula
 # FILE: octofit-tracker/backend/octofit_tracker/management/commands/populate_db.py
 
 from django.core.management.base import BaseCommand
-from octofit_tracker.models import User, Team, Activity, Leaderboard, Workout
+from octofit_tracker.models import User, Team, Activity, Workout, Leaderboard
+from datetime import timedelta
 
 class Command(BaseCommand):
-    help = 'Populate the database with sample data'
+    help = 'Populate the database with initial data'
 
     def handle(self, *args, **kwargs):
-        user1 = User.objects.create(
-            username='user1',
-            email='user1@example.com',
-            password='password'
-        )
-        user2 = User.objects.create(
-            username='user2',
-            email='user2@example.com',
-            password='password'
-        )
+        # Create some users
+        user1 = User.objects.create_user(username='user1', email='user1@example.com', password='password')
+        user2 = User.objects.create_user(username='user2', email='user2@example.com', password='password')
 
-        team_member1 = {
-            'id': str(user1.id),
-            'user': user1.to_dict()
-        }
-        team_member2 = {
-            'id': str(user2.id),
-            'user': user2.to_dict()
-        }
+        # Create a team
+        team = Team.objects.create(name='Team A')
+        team.members.set([user1, user2])
 
-        team1 = Team.objects.create(
-            name='team1',
-            members=[team_member1, team_member2]
-        )
-        team2 = Team.objects.create(
-            name='team2',
-            members=[team_member2]
-        )
+        # Create some activities
+        Activity.objects.create(user=user1, activity_type='Running', duration=timedelta(minutes=30))
+        Activity.objects.create(user=user2, activity_type='Cycling', duration=timedelta(hours=1))
 
-        Activity.objects.create(
-            user=user1,
-            activity_type='Running',
-            duration=30
-        )
-        Activity.objects.create(
-            user=user2,
-            activity_type='Cycling',
-            duration=45
-        )
+        # Create some workouts
+        Workout.objects.create(name='Workout A', description='Description A', suggested_duration=timedelta(minutes=45))
+        Workout.objects.create(name='Workout B', description='Description B', suggested_duration=timedelta(hours=1, minutes=15))
 
-        Leaderboard.objects.create(
-            user=user1,
-            score=100
-        )
-        Leaderboard.objects.create(
-            user=user2,
-            score=150
-        )
+        # Create leaderboard entries
+        Leaderboard.objects.create(user=user1, total_points=100)
+        Leaderboard.objects.create(user=user2, total_points=150)
 
-        Workout.objects.create(
-            user=user1,
-            workout_type='Strength',
-            duration=60
-        )
-        Workout.objects.create(
-            user=user2,
-            workout_type='Cardio',
-            duration=40
-        )
-
-        self.stdout.write(
-            self.style.SUCCESS('Successfully populated the database with sample data')
-        )
+        self.stdout.write(self.style.SUCCESS('Database populated successfully'))
 ```
 
 ![Migrate and populate db](./5_3_MigratePopulateDb.png)
