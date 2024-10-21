@@ -49,4 +49,4 @@ Important to avoid using public code and we do NOT need to initialize the git re
 
 ![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)
 
-[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: MongoDB install and setup](../4_BackendSettings)
+[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: OctoFit app backend setup](../4_BackendSettings/)
