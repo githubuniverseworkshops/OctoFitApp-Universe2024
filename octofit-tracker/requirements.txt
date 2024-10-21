@@ -1,5 +1,5 @@
 Django==4.1
-bson==0.5.10
+#bson==0.5.10
 djangorestframework==3.14.0
 django-allauth==0.51.0
 dj-rest-auth
