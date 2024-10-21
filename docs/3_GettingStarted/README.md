@@ -6,24 +6,29 @@ In this section, we will start by setting up the face of our OctoFit application
 
 ## Explain to GitHub Copilot the goals and steps
 
-It is important to lay out a plan and provide details 
+It is important to lay out a plan and provide details. Type the following prompt:
 
 ```text
 I want to build an OctoFit Tracker app that will include the following:
 
 * User authentication and profiles
-* Activity logging and tracking 
-* Team creation and management 
-* Competitive leader boards 
-* Personalized workout suggestions in one app 
+* Activity logging and tracking
+* Team creation and management
+* Competitive leader boards
+* Personalized workout suggestions
 
-I want to use React.js for the frontend. I want to use Python with Django REST Framework for the backend and Mongo DB as the database to store data.
+It should be in one app
 
-Create the frontend and backend in the octofit-tracker directory of this repository
+generate instructions in this order
 
-the octofit-tracker/backend directory will store the django app with no subdirectories
-
-the octofit-tracker/frontend directory will store the react app with no subdirectories
+1. Create the frontend and backend in the octofit-tracker directory of this repository in one command
+2. the octofit-tracker/backend directory will store the django app with no subdirectories
+3. setup backend python venv and install octofit-tracker/requirements.txt first
+4. Create the django app directly in the directory octofit_tracker/backend
+5. setup the octofit-tracker/frontend directory will store the react app with no subdirectories
+6. instlal bootstrap
+7. Install and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
+ 
 
 Use a Python virtual environment and install all python dependencies from file octofit-tracker/requirements.txt in this workspace
 
@@ -38,10 +43,10 @@ Let's think about this step by step
 Important to avoid using public code and we do NOT need to initialize the git repository
 ```
 
-![project plan](./3_1_AskCopilotProjectCreation.png)
+![create project plan](./3_1_AskCopilotProjectCreation.png)
 
-![directory structure](./3_2_CopilotDirectoryStructure.png)
+![step by step](./3_2_StepByStep.png)
 
-![octofit-tracker app setup](./3_3_OctFit-Tracker-Setup.png)
+![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)
 
-[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: MongoDB install and setup - ](../4_MongoDBInstallSetup)
+[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: OctoFit app backend setup](../4_BackendSettings/)

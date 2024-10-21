@@ -6,3 +6,4 @@ venv/
 # octofit tracker app frontend and backend
 backend/
 frontend/
+management/
