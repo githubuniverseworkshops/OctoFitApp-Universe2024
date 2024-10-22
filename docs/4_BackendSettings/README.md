@@ -12,9 +12,9 @@ In our next steps lets think step by step and setup the following in this order
 3. In octofit_tracker project setup models, views, and serializers for users, teams, activity, leaderboard, and workouts
 ```
 
-![octofit tracker backend settings](./4_1_OctoFitTrackerBackendSettings.png)
-![create models serializers](./4_2_CreateModelsViewsSerializers.png)
-![backend urls populate data](./4_3_OctoFitAppBackendUrls.png)
+![OctoFit Tracker backend settings](./4_1_OctoFitTrackerBackendSettings.png)</br>
+![create models serializers views](./4_2_CreateModelsViewsSerializers.png)</br>
+![backend urls populate data](./4_3_OctoFitAppBackendUrls.png)</br>
 
 ### Sample code for models.py, serializers.py, and views.py
 

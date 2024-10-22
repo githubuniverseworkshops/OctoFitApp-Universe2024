@@ -1,4 +1,4 @@
-# Prerequisites and development environment setup
+# Prerequisites and setup of the development environment
 
 ## Prerequisites
 
@@ -7,9 +7,9 @@
 
 ## OctoFit Tracker technology stack
 
-- NodeJS: Version xxx
-- ReactJS: Version xxx
-- Python Django: Version xxx
+- NodeJS: Version v20.17.0
+- ReactJS: Version v18.3.1
+- Python Django: Version v4.1
 
 ## Developer environment setup
 
@@ -24,7 +24,14 @@ but, this is what we are using for the GitHub Universe workshop
 
 #### Create a GitHub codespace
 
-![create a GitHub codespace](./2_1_codespace-create.png)
+![create a GitHub codespace](./2_2_codespace-create.png)
+
+#### Once the GitHub Codespace is created
+
+When the codespace is created you may get the following message for the GitHub Copilot Chat extension
+
+![show extension](./2_3_codesapce-show-extension.png)</br>
+![copilot extension reload](./2_4_codespace-copilot-ext-reload.png)
 
 ### Option 2: Use your IDE of choice
 
