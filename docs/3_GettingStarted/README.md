@@ -6,7 +6,10 @@ In this section, we will start by setting up the face of our OctoFit application
 
 ## Explain to GitHub Copilot the goals and steps
 
-It is important to lay out a plan and provide details. Type the following prompt:
+It is important to lay out a plan, provide details, and be specific.</br>
+Type the following prompt in GitHub Copilot Chat:
+
+> TIP: we are going to use gpt-4o as our OpenAI GPT model for this GitHub Universe Workshop
 
 ```text
 I want to build an OctoFit Tracker app that will include the following:
@@ -22,11 +25,11 @@ It should be in one app
 generate instructions in this order
 
 1. Create the frontend and backend in the octofit-tracker directory of this repository in one command
-2. the octofit-tracker/backend directory will store the django app with no subdirectories
-3. setup backend python venv and install octofit-tracker/requirements.txt first
+2. The octofit-tracker/backend directory will store the django project with the name octofit-tracker
+3. Setup backend python venv and install octofit-tracker/requirements.txt first
 4. Create the django app directly in the directory octofit_tracker/backend
-5. setup the octofit-tracker/frontend directory will store the react app with no subdirectories
-6. instlal bootstrap
+5. Setup the octofit-tracker/frontend directory will store the react app with no subdirectories
+6. Install bootstrap
 7. Install and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
  
 

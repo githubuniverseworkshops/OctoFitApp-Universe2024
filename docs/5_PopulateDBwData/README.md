@@ -2,7 +2,7 @@
 
 ## Example of not being specific
 
-Type the following prompt:
+> NOTE: Don't type this prompt look at the next one
 
 ```text
 Let's use manage.py to get everything setup we need to create init.py for populate_db command include steps to migrate as well
@@ -15,6 +15,8 @@ Let's use manage.py to get everything setup we need to create init.py for popula
 ## Example of being more specific in our prompt
 
 ### Let's be more specific and ask Copilot to update the output with the octofit_tracker app name
+
+Type the following prompt in GitHub Copilot Chat:
 
 ```text
 Let's use manage.py to get everything setup we need to create init.py for populate_db command include steps to migrate as well in the octofit_tracker project

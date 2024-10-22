@@ -2,6 +2,8 @@
 
 ## Use Copilot Chat and paste the following
 
+Type the following prompt in GitHub Copilot Chat:
+
 ```text
 In our next steps lets think step by step and setup the following in this order
 
