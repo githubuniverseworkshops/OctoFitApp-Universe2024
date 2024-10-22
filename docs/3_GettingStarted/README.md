@@ -26,12 +26,33 @@ generate instructions in this order
 
 1. Create the frontend and backend in the octofit-tracker directory of this repository in one command
 2. The octofit-tracker/backend directory will store the django project with the name octofit-tracker
-3. Setup backend python venv and install octofit-tracker/requirements.txt first
-4. Create the django app directly in the directory octofit_tracker/backend
-5. Setup the octofit-tracker/frontend directory will store the react app with no subdirectories
-6. Install bootstrap
-7. Install and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
- 
+3. The Django project octofit-tracker directory will have all the backend components for the app
+4. Setup backend python venv and install octofit-tracker/requirements.txt first
+5. Create the django app directly in the directory octofit_tracker/backend
+6. Setup the octofit-tracker/frontend directory will store the react app with no subdirectories
+7. Install bootstrap
+8. Install mongodb via 'apt-get' and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
+
+Tha directory tree for the OctoFit Tracker App
+
+octofit-tracker/
+├── backend/
+│   ├── venv/
+│   ├── octofit_tracker/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── settings.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── wsgi.py
+│   │   └── asgi.py
+└── frontend/
+    ├── node_modules/
+    ├── public/
+    ├── src/
+    ├── package.json
+    └── README.md
 
 Use a Python virtual environment and install all python dependencies from file octofit-tracker/requirements.txt in this workspace
 
@@ -46,10 +67,10 @@ Let's think about this step by step
 Important to avoid using public code and we do NOT need to initialize the git repository
 ```
 
-![create project plan](./3_1_AskCopilotProjectCreation.png)
+![create project plan](./3_1_AskCopilotProjectCreation.png)</br>
 
-![step by step](./3_2_StepByStep.png)
+![step by step](./3_2_StepByStep.png)</br>
 
-![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)
+![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)</br>
 
 [Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: OctoFit app backend setup](../4_BackendSettings/)
