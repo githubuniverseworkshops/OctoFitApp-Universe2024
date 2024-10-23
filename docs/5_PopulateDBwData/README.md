@@ -19,7 +19,7 @@ Let's use manage.py to get everything setup we need to create init.py for popula
 Type the following prompt in GitHub Copilot Chat:
 
 ```text
-Let's use manage.py to get the databasesetup and populated
+Let's use manage.py to get the database setup and populated
 
 - Populate the database with super hero users
 - Create full setup for a command populate_db.py

@@ -25,12 +25,12 @@ It should be in one app
 generate instructions in this order
 
 1. Create the frontend and backend in the octofit-tracker directory of this repository in one command
-2. The octofit-tracker/backend directory will store the django project with the name octofit-tracker
-3. The Django project octofit-tracker directory will have all the backend components for the app
-4. Setup backend python venv and install octofit-tracker/requirements.txt first
+2. Setup backend python venv and install octofit-tracker/requirements.txt first
+3. The octofit-tracker/backend directory will store the django project with the name octofit-tracker
+4. The Django project octofit-tracker directory will have all the backend components for the app
 5. Create the django app directly in the directory octofit_tracker/backend
 6. Setup the octofit-tracker/frontend directory will store the react app with no subdirectories
-7. Install bootstrap
+7. Install bootstrap and import it
 8. Install mongodb via 'apt-get' and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
 
 Tha directory tree for the OctoFit Tracker App
@@ -53,6 +53,8 @@ octofit-tracker/
     ├── src/
     ├── package.json
     └── README.md
+
+All of the backend django app will be in octofit_tracker and do NOT create another app of any kind
 
 Use a Python virtual environment and install all python dependencies from file octofit-tracker/requirements.txt in this workspace
 
