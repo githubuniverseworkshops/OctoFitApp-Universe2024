@@ -28,4 +28,5 @@ Without further ado, let's get started.
 1. [Story](docs/1_Story)
 2. [Prerequisites and development environment setup](docs/2_Prerequisites)
 3. [Getting started - app frontend and backend creation](docs/3_GettingStarted)
-4. [MongoDB install and setup](docs/4_MongoDBInstallSetup/)
+4. [OctoFit Tracker database and app backend setup](docs/4_BackendSettings)
+5. [Populate the database with sample data](docs/5_PopulateDBwData)

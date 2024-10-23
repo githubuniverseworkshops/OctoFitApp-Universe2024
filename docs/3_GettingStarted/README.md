@@ -26,7 +26,7 @@ generate instructions in this order
 
 1. Create the frontend and backend in the octofit-tracker directory of this repository in one command
 2. Setup backend python venv and install octofit-tracker/requirements.txt first
-3. The octofit-tracker/backend directory will store the django project with the name octofit-tracker
+3. The octofit-tracker/backend directory will store the django project and app with the name octofit-tracker
 4. The Django project octofit-tracker directory will have all the backend components for the app
 5. Create the django app directly in the directory octofit_tracker/backend
 6. Setup the octofit-tracker/frontend directory will store the react app with no subdirectories
@@ -75,4 +75,4 @@ Important to avoid using public code and we do NOT need to initialize the git re
 
 ![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)</br>
 
-[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: OctoFit app backend setup](../4_BackendSettings/)
+[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: OctoFit Tracker database and app backend setup](../4_BackendSettings/)
