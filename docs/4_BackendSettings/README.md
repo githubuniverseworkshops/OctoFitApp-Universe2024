@@ -53,42 +53,52 @@ INSTALLED_APPS = [
 #### models.py
 
 ```python
-# FILE: octofit_tracker/models.py
+# FILE: octofit-tracker/backend/octofit_tracker/models.py
 
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-class User(models.Model):
-    username = models.CharField(max_length=100)
+class User(AbstractUser):
     email = models.EmailField(unique=True)
-    password = models.CharField(max_length=100)
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='octofit_tracker_user_set',
+        blank=True,
+        help_text='The groups this user belongs to.',
+        verbose_name='groups',
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='octofit_tracker_user_set',
+        blank=True,
+        help_text='Specific permissions for this user.',
+        verbose_name='user permissions',
+    )
 
 class Team(models.Model):
     name = models.CharField(max_length=100)
-    members = models.ManyToManyField(User)
 
 class Activity(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     activity_type = models.CharField(max_length=100)
+
+class Workout(models.Model):
+    name = models.CharField(max_length=100)
     duration = models.DurationField()
-    date = models.DateField()
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Leaderboard(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField()
-
-class Workout(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    duration = models.DurationField()
 ```
 
 #### serializers.py
 
 ```python
-# FILE: octofit_tracker/serializers.py
+# FILE: octofit-tracker/backend/octofit_tracker/serializers.py
 
 from rest_framework import serializers
-from .models import User, Team, Activity, Leaderboard, Workout
+from .models import User, Team, Activity, Workout, Leaderboard
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -105,14 +115,14 @@ class ActivitySerializer(serializers.ModelSerializer):
         model = Activity
         fields = '__all__'
 
-class LeaderboardSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Leaderboard
-        fields = '__all__'
-
 class WorkoutSerializer(serializers.ModelSerializer):
     class Meta:
         model = Workout
+        fields = '__all__'
+
+class LeaderboardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Leaderboard
         fields = '__all__'
 ```
 
