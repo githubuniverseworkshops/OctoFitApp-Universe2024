@@ -6,7 +6,10 @@ In this section, we will start by setting up the face of our OctoFit application
 
 ## Explain to GitHub Copilot the goals and steps
 
-It is important to lay out a plan and provide details. Type the following prompt:
+It is important to lay out a plan, provide details, and be specific.</br>
+Type the following prompt in GitHub Copilot Chat:
+
+> TIP: we are going to use gpt-4o as our OpenAI GPT model for this GitHub Universe Workshop
 
 ```text
 I want to build an OctoFit Tracker app that will include the following:
@@ -22,13 +25,36 @@ It should be in one app
 generate instructions in this order
 
 1. Create the frontend and backend in the octofit-tracker directory of this repository in one command
-2. the octofit-tracker/backend directory will store the django app with no subdirectories
-3. setup backend python venv and install octofit-tracker/requirements.txt first
-4. Create the django app directly in the directory octofit_tracker/backend
-5. setup the octofit-tracker/frontend directory will store the react app with no subdirectories
-6. instlal bootstrap
-7. Install and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
- 
+2. Setup backend python venv and install octofit-tracker/requirements.txt first
+3. The octofit-tracker/backend directory will store the django project with the name octofit-tracker
+4. The Django project octofit-tracker directory will have all the backend components for the app
+5. Create the django app directly in the directory octofit_tracker/backend
+6. Setup the octofit-tracker/frontend directory will store the react app with no subdirectories
+7. Install bootstrap and import it
+8. Install mongodb via 'apt-get' and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
+
+Tha directory tree for the OctoFit Tracker App
+
+octofit-tracker/
+├── backend/
+│   ├── venv/
+│   ├── octofit_tracker/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── settings.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── wsgi.py
+│   │   └── asgi.py
+└── frontend/
+    ├── node_modules/
+    ├── public/
+    ├── src/
+    ├── package.json
+    └── README.md
+
+All of the backend django app will be in octofit_tracker and do NOT create another app of any kind
 
 Use a Python virtual environment and install all python dependencies from file octofit-tracker/requirements.txt in this workspace
 
@@ -43,10 +69,10 @@ Let's think about this step by step
 Important to avoid using public code and we do NOT need to initialize the git repository
 ```
 
-![create project plan](./3_1_AskCopilotProjectCreation.png)
+![create project plan](./3_1_AskCopilotProjectCreation.png)</br>
 
-![step by step](./3_2_StepByStep.png)
+![step by step](./3_2_StepByStep.png)</br>
 
-![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)
+![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)</br>
 
 [Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: OctoFit app backend setup](../4_BackendSettings/)

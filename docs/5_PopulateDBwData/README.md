@@ -2,7 +2,7 @@
 
 ## Example of not being specific
 
-Type the following prompt:
+> NOTE: This is an example of not being specific skip this prompt and go to the next one
 
 ```text
 Let's use manage.py to get everything setup we need to create init.py for populate_db command include steps to migrate as well
@@ -16,8 +16,14 @@ Let's use manage.py to get everything setup we need to create init.py for popula
 
 ### Let's be more specific and ask Copilot to update the output with the octofit_tracker app name
 
+Type the following prompt in GitHub Copilot Chat:
+
 ```text
-Let's use manage.py to get everything setup we need to create init.py for populate_db command include steps to migrate as well in the octofit_tracker project
+Let's use manage.py to get the database setup and populated
+
+- Populate the database with super hero users
+- Create full setup for a command populate_db.py
+- Include steps to migrate in the octofit_tracker project
 ```
 
 ![populate db Code app name octofit_tracker](./5_2_PopulateDbCodeOctoFitAppSecond.png)
@@ -35,25 +41,19 @@ class Command(BaseCommand):
     help = 'Populate the database with initial data'
 
     def handle(self, *args, **kwargs):
-        # Create some users
-        user1 = User.objects.create_user(username='user1', email='user1@example.com', password='password')
-        user2 = User.objects.create_user(username='user2', email='user2@example.com', password='password')
+        # Create Superhero Users
+        users = [
+            {'username': 'superman', 'email': 'superman@heroes.com', 'password': 'superpassword'},
+            {'username': 'batman', 'email': 'batman@heroes.com', 'password': 'batpassword'},
+            {'username': 'wonderwoman', 'email': 'wonderwoman@heroes.com', 'password': 'wonderpassword'},
+        ]
 
-        # Create a team
-        team = Team.objects.create(name='Team A')
-        team.members.set([user1, user2])
+        for user_data in users:
+            user, created = User.objects.get_or_create(**user_data)
+            if created:
+                self.stdout.write(self.style.SUCCESS(f"User {user.username} created"))
 
-        # Create some activities
-        Activity.objects.create(user=user1, activity_type='Running', duration=timedelta(minutes=30))
-        Activity.objects.create(user=user2, activity_type='Cycling', duration=timedelta(hours=1))
-
-        # Create some workouts
-        Workout.objects.create(name='Workout A', description='Description A', suggested_duration=timedelta(minutes=45))
-        Workout.objects.create(name='Workout B', description='Description B', suggested_duration=timedelta(hours=1, minutes=15))
-
-        # Create leaderboard entries
-        Leaderboard.objects.create(user=user1, total_points=100)
-        Leaderboard.objects.create(user=user2, total_points=150)
+        # Add more data population logic here if needed
 
         self.stdout.write(self.style.SUCCESS('Database populated successfully'))
 ```
