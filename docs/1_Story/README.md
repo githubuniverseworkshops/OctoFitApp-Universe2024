@@ -30,9 +30,17 @@ OctoFit Tracker will include:
 GitHub Copilot and Copilot Chat uses OpenAI GPT models for its coding suggestions and chat interaction.
 OpenAI gpt-4o: *"Our high-intelligence flagship model for complex, multi-step tasks. GPT-4o is cheaper and faster than GPT-4 Turbo. Currently points to gpt-4o-2024-08-06"*
 
-[OpenAI GPT models explained](https://platform.openai.com/docs/models)
+#### [OpenAI GPT models explained](https://platform.openai.com/docs/models)
 
 ![openai gpt models](./gpt-models.png)
+
+#### Prompt engineering
+
+- [GitHub documentation prompt engineering](https://docs.github.com/en/copilot/using-github-copilot/prompt-engineering-for-github-copilot)
+- [How to use GitHub Copilot: Prompts, tips, and use cases](https://github.blog/2023-06-20-how-to-write-better-prompts-for-github-copilot/)
+- [Using GitHub Copilot in your IDE: Tips, tricks, and best practices](https://github.blog/2024-03-25-how-to-use-github-copilot-in-your-ide-tips-tricks-and-best-practices/)
+- [A developer’s guide to prompt engineering and LLMs](https://docs.github.com/en/copilot/using-github-copilot/prompt-engineering-for-github-copilot#:~:text=A%20developer%E2%80%99s%20guide%20to%20prompt%20engineering%20and%20LLMs)
+- [Prompting GitHub Copilot Chat to become your personal AI assistant for accessibility]https://github.blog/2023-10-09-prompting-github-copilot-chat-to-become-your-personal-ai-assistant-for-accessibility/()
 
 OpenAI gpt-4o: *"Our high-intelligence flagship model for complex, multi-step tasks. GPT-4o is cheaper and faster than GPT-4 Turbo. Currently points to gpt-4o-2024-08-06"*
 
