@@ -1,4 +1,4 @@
-# OctoFit Tracker database and app backend setup
+# The OctoFit Tracker database and app backend creation
 
 ## Initialize the database, setup database and install apps in settings.py, models, serializers, urls, and views
 
@@ -16,10 +16,11 @@ In our next steps lets think step by step and setup the following in this order
 6. make sure urls.py has a root, admin, and api endpoints
 ```
 
-![OctoFit Tracker backend files](./4_1_OctoFitTrackerBackendFiles.png)</br>
-![update settings](./4_2_UpdateSettings.png)</br>
-![project files - models and serializers](./4_3_CreateBackendProjectFiles1.png)</br>
-![project files - views and urls](./4_3_CreateBackendProjectFiles2.png)</br>
+![OctoFit Tracker backend prompt](./4_1_BackendSettingsPrompt.png)</br>
+![OctoFit Tracker backend response step 1](./4_2_BackendSettingsStep1.png)</br>
+![OctoFit Tracker backend response step 2 and 3](./4_2_BackendSettingsStep2Step3_1.png)</br>
+![OctoFit Tracker backend response step 3 continued](./4_2_BackendSettingsStep3_2.png)</br>
+![OctoFit Tracker backend response step 3 continued](./4_2_BackendSettingsStep3_3.png)</br>
 
 ### Sample settings.py
 
@@ -188,4 +189,4 @@ urlpatterns = [
 ]
 ```
 
-[Back :: Previous: Getting started](../3_GettingStarted) | [Next :: Populate database with data via manage.py](../5_PopulateDBwData)
+[Back :: Previous: Getting started - app frontend and backend creation](../3_GettingStarted/README.md) | [Next :: Populate the database with sample data](../5_PopulateDBwData/README.md)

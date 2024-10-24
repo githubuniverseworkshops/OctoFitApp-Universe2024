@@ -25,8 +25,9 @@ Without further ado, let's get started.
 
 ## Table of Contents
 
-1. [Story](docs/1_Story)
-2. [Prerequisites and development environment setup](docs/2_Prerequisites)
-3. [Getting started - app frontend and backend creation](docs/3_GettingStarted)
-4. [OctoFit Tracker database and app backend setup](docs/4_BackendSettings)
-5. [Populate the database with sample data](docs/5_PopulateDBwData)
+1. [The OctoFit Tracker app story](docs/1_Story/README.md)
+2. [Prerequisites and asetup of the development environment](docs/2_Prerequisites/README.md)
+3. [Getting started - app frontend and backend creation](docs/3_GettingStarted/README.md)
+4. [The OctoFit Tracker database and app backend creation](docs/4_BackendSettings/README.md)
+5. [Populate the database with sample data](docs/5_PopulateDBwData/README.md)
+6. [Using the Codespace endpoint to access the Django REST Framework](docs/6_CodespaceDjangoRESTFramework/README.md)
