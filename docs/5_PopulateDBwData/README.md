@@ -1,4 +1,4 @@
-# Populate database with data via manage.py
+# Populate the database with sample data
 
 ## Example of not being specific
 
@@ -27,7 +27,9 @@ Let's use manage.py to get the database setup and populated based on fields in m
 - Include steps to migrate in the octofit_tracker project
 ```
 
-![populate db Code app name octofit_tracker](./5_2_PopulateDbCodeOctoFitAppSecond.png)
+![populate the database with data prompt](./5_1_PopulateDBwDataPrompt.png)
+![create the populate_db.py step 1_1](./5_2_PopulateDBwDataStep1_1.png)
+![create the populate_db.py step 1_2](./5_2_PopulateDBwDataStep1_2.png)
 
 ### Sample code for populate_db.py
 
@@ -143,3 +145,5 @@ class Command(BaseCommand):
 ```
 
 ![Migrate and populate db](./5_3_MigratePopulateDb.png)
+
+[Back :: Previous: Getting started - app frontend and backend creation](../4_BackendSettings/README.md) | [Next :: Using the Codespace endpoint to access the Django REST Framework](../6_CodespaceDjangoRESTFramework/README.md)
