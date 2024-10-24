@@ -1,16 +1,19 @@
-# Setup database in settings.py, models, views, serializers, and populate data
+# OctoFit Tracker database and app backend setup
 
-## Use Copilot Chat
+## Initialize the database, setup database and install apps in settings.py, models, serializers, urls, and views
 
 Type the following prompt in GitHub Copilot Chat:
 
 ```text
 In our next steps lets think step by step and setup the following in this order
 
-1. Initialize the mongo octofit_db database
-2. settings.py in our django project for mongodb octofit_db database including localhost and the port
-3. settings.py in our django project setup for all installed apps. ex djongo, octofit_tracker, rest_framework
-4. In octofit_tracker project setup and touch models, serializers, urls, and views for users, teams, activity, leaderboard, and workouts
+1. Initialize the mongo octofit_db database and create a correct table structure for users, teams, activities, leaderboards, and workouts collections
+2. Make sure there is a unique id for primary key for the user collection 
+   ex. db.users.createIndex({ "email": 1 }, { unique: true })
+3. settings.py in our django project for mongodb octofit_db database including localhost and the port
+4. settings.py in our django project setup for all installed apps. ex djongo, octofit_tracker, rest_framework
+5. In octofit_tracker project setup and use command touch models.py, serializers.py, urls.py, and views.py for users, teams, activities, leaderboards, and workouts
+6. make sure urls.py has a root, admin, and api endpoints
 ```
 
 ![OctoFit Tracker backend files](./4_1_OctoFitTrackerBackendFiles.png)</br>
@@ -56,41 +59,34 @@ INSTALLED_APPS = [
 ```python
 # FILE: octofit-tracker/backend/octofit_tracker/models.py
 
-from django.db import models
-from django.contrib.auth.models import AbstractUser
+from djongo import models
 
-class User(AbstractUser):
+class User(models.Model):
+    _id = models.ObjectIdField()
+    username = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    groups = models.ManyToManyField(
-        'auth.Group',
-        related_name='octofit_tracker_user_set',
-        blank=True,
-        help_text='The groups this user belongs to.',
-        verbose_name='groups',
-    )
-    user_permissions = models.ManyToManyField(
-        'auth.Permission',
-        related_name='octofit_tracker_user_set',
-        blank=True,
-        help_text='Specific permissions for this user.',
-        verbose_name='user permissions',
-    )
+    password = models.CharField(max_length=100)
 
 class Team(models.Model):
+    _id = models.ObjectIdField()
     name = models.CharField(max_length=100)
+    members = models.ArrayReferenceField(to=User, on_delete=models.CASCADE)
 
 class Activity(models.Model):
-    activity_type = models.CharField(max_length=100)
-
-class Workout(models.Model):
-    name = models.CharField(max_length=100)
-    duration = models.DurationField()
-    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    _id = models.ObjectIdField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    activity_type = models.CharField(max_length=100)
+    duration = models.DurationField()
 
 class Leaderboard(models.Model):
+    _id = models.ObjectIdField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField()
+
+class Workout(models.Model):
+    _id = models.ObjectIdField()
+    name = models.CharField(max_length=100)
+    description = models.TextField()
 ```
 
 #### serializers.py
@@ -99,7 +95,7 @@ class Leaderboard(models.Model):
 # FILE: octofit-tracker/backend/octofit_tracker/serializers.py
 
 from rest_framework import serializers
-from .models import User, Team, Activity, Workout, Leaderboard
+from .models import User, Team, Activity, Leaderboard, Workout
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -116,14 +112,14 @@ class ActivitySerializer(serializers.ModelSerializer):
         model = Activity
         fields = '__all__'
 
-class WorkoutSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Workout
-        fields = '__all__'
-
 class LeaderboardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Leaderboard
+        fields = '__all__'
+
+class WorkoutSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Workout
         fields = '__all__'
 ```
 
@@ -132,9 +128,9 @@ class LeaderboardSerializer(serializers.ModelSerializer):
 ```python
 # FILE: octofit_tracker/views.py
 
-from rest_framework import viewsets
-from .models import User, Team, Activity, Leaderboard, Workout
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -155,6 +151,17 @@ class LeaderboardViewSet(viewsets.ModelViewSet):
 class WorkoutViewSet(viewsets.ModelViewSet):
     queryset = Workout.objects.all()
     serializer_class = WorkoutSerializer
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    base_url = 'http://upgraded-space-happiness-959pr7vpgw3p7vv-8000.app.github.dev/'
+    return Response({
+        'users': base_url + 'api/users/?format=api',
+        'teams': base_url + 'api/teams/?format=api',
+        'activities': base_url + 'api/activities/?format=api',
+        'leaderboards': base_url + 'api/leaderboards/?format=api',
+        'workouts': base_url + 'api/workouts/?format=api'
+    })
 ```
 
 #### urls.py
@@ -165,7 +172,7 @@ class WorkoutViewSet(viewsets.ModelViewSet):
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import UserViewSet, TeamViewSet, ActivityViewSet, LeaderboardViewSet, WorkoutViewSet
+from .views import UserViewSet, TeamViewSet, ActivityViewSet, LeaderboardViewSet, WorkoutViewSet, api_root
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -175,8 +182,9 @@ router.register(r'leaderboards', LeaderboardViewSet)
 router.register(r'workouts', WorkoutViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('', api_root, name='api-root'),  # Root endpoint
+    path('admin/', admin.site.urls),  # Admin endpoint
+    path('api/', include(router.urls)),  # API endpoint
 ]
 ```
 
