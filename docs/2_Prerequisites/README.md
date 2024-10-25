@@ -38,4 +38,4 @@ When the codespace is created you may get the following message for the GitHub C
 - If you choose this option we recommend using VSCode as your IDE, but this workshop is not limited to VSCode
 - URL for REACT and Django will be `http://localhost` or `http://127.0.0.1`
 
-[:arrow_backward: Previous: The OctoFit Tracker app story](../1_Story/README.md) | [:arrow_forward: Next: Getting started - app frontend and backend creation](../3_GettingStarted/README.md)
+[:arrow_backward: Previous: The OctoFit Tracker app story](../1_Story/README.md) | [Next: Getting started - app frontend and backend creation :arrow_forward:](../3_GettingStarted/README.md)

@@ -146,4 +146,4 @@ class Command(BaseCommand):
 
 ![Migrate and populate db](./5_3_MigratePopulateDb.png)
 
-[:arrow_backward: Previous: Getting started - app frontend and backend creation](../4_BackendSettings/README.md) | [:arrow_forward: Next: Using the Codespace endpoint to access the Django REST Framework](../6_CodespaceDjangoRESTFramework/README.md)
+[:arrow_backward: Previous: Getting started - app frontend and backend creation](../4_BackendSettings/README.md) | [Next: Using the Codespace endpoint to access the Django REST Framework :arrow_forward:](../6_CodespaceDjangoRESTFramework/README.md)
