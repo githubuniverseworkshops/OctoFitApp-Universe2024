@@ -14,4 +14,4 @@ Make sure to leave the feedback on the workshop and the documentation by followi
 
 [:speech_balloon: We want to hear from you! - **github.com/orgs/community/discussions/142536**](https://github.com/orgs/community/discussions/142536)
 
-
+[:house_with_garden: Go back to the main page](../../README.md)
