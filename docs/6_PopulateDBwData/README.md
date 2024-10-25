@@ -10,7 +10,7 @@ Let's use manage.py to get everything setup we need to populate_db command inclu
 
 ### Example of not being specfic in prompting Copilot Chat
 
-![populate db Code your app name](./5_1_PopulateDbCodeYourAppNameFirst.png)
+![populate db Code your app name](./6_1_PopulateDbCodeYourAppNameFirst.png)
 
 ## Example of being more specific in our prompt
 
@@ -27,9 +27,9 @@ Let's use manage.py to get the database setup and populated based on fields in m
 - Include steps to migrate in the octofit_tracker project
 ```
 
-![populate the database with data prompt](./5_1_PopulateDBwDataPrompt.png)
-![create the populate_db.py step 1_1](./5_2_PopulateDBwDataStep1_1.png)
-![create the populate_db.py step 1_2](./5_2_PopulateDBwDataStep1_2.png)
+![populate the database with data prompt](./6_1_PopulateDBwDataPrompt.png)
+![create the populate_db.py step 1_1](./6_2_PopulateDBwDataStep1_1.png)
+![create the populate_db.py step 1_2](./6_2_PopulateDBwDataStep1_2.png)
 
 ### Sample code for populate_db.py
 
@@ -146,4 +146,4 @@ class Command(BaseCommand):
 
 ![Migrate and populate db](./5_3_MigratePopulateDb.png)
 
-[Back :: Previous: Getting started - app frontend and backend creation](../4_BackendSettings/README.md) | [Next :: Using the Codespace endpoint to access the Django REST Framework](../6_CodespaceDjangoRESTFramework/README.md)
+[:arrow_backward: Previous: The OctoFit Tracker database and app backend creation](../5_BackendSettings/README.md) | [Next: Using the Codespace endpoint to access the Django REST Framework :arrow_forward:](../7_CodespaceDjangoRESTFramework/README.md)

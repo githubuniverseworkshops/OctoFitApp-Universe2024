@@ -37,4 +37,4 @@ HTTP 200 OK Allow: GET, HEAD, OPTIONS Content-Type: application/json Vary: Accep
 }
 ```
 
-[Back :: Previous: Getting started - app frontend and backend creation](../4_BackendSettings/README.md | [Next :: Using the Codespace endpoint to access the Django REST Framework](../6_CodesapceDjangoRESTFramework/)
+[:arrow_backward: Previous: Populate DB data](../6_PopulateDBwData) | [Next: What's next :arrow_forward:](../8_WhatsNext/README.md)
