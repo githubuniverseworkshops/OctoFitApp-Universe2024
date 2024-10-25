@@ -189,4 +189,4 @@ urlpatterns = [
 ]
 ```
 
-[:arrow_backward: Previous: Getting started - app frontend and backend creation](../3_GettingStarted/README.md) | [Next: Populate the database with sample data :arrow_forward:](../5_PopulateDBwData/README.md)
+[:arrow_backward: Previous: Let's work on front end](../4_FrontEndWork/README.md) | [Next: Populate the database with sample data :arrow_forward:](../6_PopulateDBwData/README.md)
