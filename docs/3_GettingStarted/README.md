@@ -75,4 +75,4 @@ Important to avoid using public code and we do NOT need to initialize the git re
 
 ![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)</br>
 
-[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites/README.md) | [Next :: The OctoFit Tracker database and app backend creation](../4_BackendSettings/README.md)
+[:arrow_backward: Previous: Prerequisites and development environment setup](../2_Prerequisites/README.md) | [:arrow_forward: Next: The OctoFit Tracker database and app backend creation](../4_BackendSettings/README.md)

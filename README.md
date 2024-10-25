@@ -34,4 +34,5 @@ Without further ado, let's get started.
 4. [The OctoFit Tracker database and app backend creation](docs/4_BackendSettings/README.md)
 5. [Populate the database with sample data](docs/5_PopulateDBwData/README.md)
 6. [Using the Codespace endpoint to access the Django REST Framework](docs/6_CodespaceDjangoRESTFramework/README.md)
-7. [:fire: REFERENCE - Troubleshooting guide and FAQs](docs/7_Troubleshooting/README.md)
+7. [What's next?](docs/7_WhatsNext/README.md)
+8. [:fire: REFERENCE - Troubleshooting guide and FAQs](docs/8_Troubleshooting/README.md)
