@@ -16,11 +16,11 @@ In our next steps lets think step by step and setup the following in this order
 6. make sure urls.py has a root, admin, and api endpoints
 ```
 
-![OctoFit Tracker backend prompt](./4_1_BackendSettingsPrompt.png)</br>
-![OctoFit Tracker backend response step 1](./4_2_BackendSettingsStep1.png)</br>
-![OctoFit Tracker backend response step 2 and 3](./4_2_BackendSettingsStep2Step3_1.png)</br>
-![OctoFit Tracker backend response step 3 continued](./4_2_BackendSettingsStep3_2.png)</br>
-![OctoFit Tracker backend response step 3 continued](./4_2_BackendSettingsStep3_3.png)</br>
+![OctoFit Tracker backend prompt](./5_1_BackendSettingsPrompt.png)</br>
+![OctoFit Tracker backend response step 1](./5_2_BackendSettingsStep1.png)</br>
+![OctoFit Tracker backend response step 2 and 3](./5_2_BackendSettingsStep2Step3_1.png)</br>
+![OctoFit Tracker backend response step 3 continued](./5_2_BackendSettingsStep3_2.png)</br>
+![OctoFit Tracker backend response step 3 continued](./5_2_BackendSettingsStep3_3.png)</br>
 
 ### Sample settings.py
 
