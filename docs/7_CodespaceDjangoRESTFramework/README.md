@@ -19,8 +19,8 @@ Vary: Accept
 {
     "users": "http://localhost:8000/api/users/?format=api",
     "teams": "http://localhost:8000/api/teams/?format=api",
-    "activities": "http://localhost:8000/api/activities/?format=api",
-    "leaderboards": "http://localhost:8000/api/leaderboards/?format=api",
+    "activity": "http://localhost:8000/api/activity/?format=api",
+    "leaderboard": "http://localhost:8000/api/leaderboard/?format=api",
     "workouts": "http://localhost:8000/api/workouts/?format=api"
 }
 
@@ -31,8 +31,8 @@ HTTP 200 OK Allow: GET, HEAD, OPTIONS Content-Type: application/json Vary: Accep
 { 
     "users": "http://<codespace-name>-8000.app.github.dev/users/api/users/?format=api",
     "teams": "http://<codespace-name>-8000.app.github.dev/api/teams/?format=api",
-    "activities": "http://<codespace-name>-8000.app.github.dev/api/activities/?format=api",
-    "leaderboards": "http://<codespace-name>-8000.app.github.dev/api/leaderboards/?format=api",
+    "activity": "http://<codespace-name>-8000.app.github.dev/api/activity/?format=api",
+    "leaderboard": "http://<codespace-name>-8000.app.github.dev/api/leaderboard/?format=api",
     "workouts": "http://<codespace-name>-8000.app.github.dev/api/workouts/?format=api" 
 }
 ```

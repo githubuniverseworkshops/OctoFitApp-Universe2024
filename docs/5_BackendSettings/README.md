@@ -7,13 +7,14 @@ Type the following prompt in GitHub Copilot Chat:
 ```text
 In our next steps lets think step by step and setup the following in this order
 
-1. Initialize the mongo octofit_db database and create a correct table structure for users, teams, activities, leaderboards, and workouts collections
+1. Initialize the mongo octofit_db database and create a correct table structure for users, teams, activity, leaderboard, and workouts collections
 2. Make sure there is a unique id for primary key for the user collection 
    ex. db.users.createIndex({ "email": 1 }, { unique: true })
 3. settings.py in our django project for mongodb octofit_db database including localhost and the port
 4. settings.py in our django project setup for all installed apps. ex djongo, octofit_tracker, rest_framework
-5. In octofit_tracker project setup and use command touch models.py, serializers.py, urls.py, and views.py for users, teams, activities, leaderboards, and workouts
-6. make sure urls.py has a root, admin, and api endpoints
+5. In octofit_tracker project setup and use command touch models.py, serializers.py, urls.py, and views.py for users, teams, activity, leaderboard, and workouts
+6. Generate code for models.py, serializers.py, and views.py and
+7. make sure urls.py has a root, admin, and api endpoints
 ```
 
 ![OctoFit Tracker backend prompt](./5_1_BackendSettingsPrompt.png)</br>
@@ -21,6 +22,22 @@ In our next steps lets think step by step and setup the following in this order
 ![OctoFit Tracker backend response step 2 and 3](./5_2_BackendSettingsStep2Step3_1.png)</br>
 ![OctoFit Tracker backend response step 3 continued](./5_2_BackendSettingsStep3_2.png)</br>
 ![OctoFit Tracker backend response step 3 continued](./5_2_BackendSettingsStep3_3.png)</br>
+
+### MongoDB commands to setup `octofit_db`
+
+mongo
+use octofit_db
+db.createCollection("users")
+db.createCollection("teams")
+db.createCollection("activity")
+db.createCollection("leaderboard")
+db.createCollection("workouts")
+db.users.createIndex({ "email": 1 }, { unique: true })
+db.teams.createIndex({ "name": 1 }, { unique: true })
+db.activity.createIndex({ "user": 1, "activity_type": 1 }, { unique: true })
+db.leaderboard.createIndex({ "user": 1 }, { unique: true })
+db.workouts.createIndex({ "user": 1 }, { unique: true })
+exit
 
 ### Sample settings.py
 
@@ -61,33 +78,32 @@ INSTALLED_APPS = [
 # FILE: octofit-tracker/backend/octofit_tracker/models.py
 
 from djongo import models
+from django.core.exceptions import ValidationError
 
 class User(models.Model):
-    _id = models.ObjectIdField()
-    username = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
+    username = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
 
 class Team(models.Model):
-    _id = models.ObjectIdField()
     name = models.CharField(max_length=100)
-    members = models.ArrayReferenceField(to=User, on_delete=models.CASCADE)
+    members = models.ArrayReferenceField(
+        to=User,
+        on_delete=models.CASCADE
+    )
 
 class Activity(models.Model):
-    _id = models.ObjectIdField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     activity_type = models.CharField(max_length=100)
-    duration = models.DurationField()
+    duration = models.IntegerField()
 
 class Leaderboard(models.Model):
-    _id = models.ObjectIdField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField()
 
 class Workout(models.Model):
-    _id = models.ObjectIdField()
-    name = models.CharField(max_length=100)
-    description = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    workout_plan = models.TextField()
 ```
 
 #### serializers.py
@@ -159,8 +175,8 @@ def api_root(request, format=None):
     return Response({
         'users': base_url + 'api/users/?format=api',
         'teams': base_url + 'api/teams/?format=api',
-        'activities': base_url + 'api/activities/?format=api',
-        'leaderboards': base_url + 'api/leaderboards/?format=api',
+        'activity': base_url + 'api/activity/?format=api',
+        'leaderboard': base_url + 'api/leaderboard/?format=api',
         'workouts': base_url + 'api/workouts/?format=api'
     })
 ```
@@ -178,8 +194,8 @@ from .views import UserViewSet, TeamViewSet, ActivityViewSet, LeaderboardViewSet
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'teams', TeamViewSet)
-router.register(r'activities', ActivityViewSet)
-router.register(r'leaderboards', LeaderboardViewSet)
+router.register(r'activity', ActivityViewSet)
+router.register(r'leaderboard', LeaderboardViewSet)
 router.register(r'workouts', WorkoutViewSet)
 
 urlpatterns = [

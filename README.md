@@ -14,9 +14,10 @@ This workshop involves several technology stacks, therefore it is essential that
 ### Objectives
 
 **Walk through a real-world use case**:
-  - Building a fitness tracker app from end to end
-  - Create a full stack of technologies for the infrastructure, frontend, and backend
-  - Using the latest **GitHub Copilot** features
+
+- Building a fitness tracker app from end to end
+- Create a full stack of technologies for the infrastructure, frontend, and backend
+- Using the latest **GitHub Copilot** features
 
 ### Key takeaways
 

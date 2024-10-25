@@ -22,7 +22,7 @@ Type the following prompt in GitHub Copilot Chat:
 Let's use manage.py to get the database setup and populated based on fields in models.py
 
 - Create populate_db.py so it initializes and deletes previous data and recreates it
-- populate_db.py creates users, teams, activities, leaderboards, and workouts
+- populate_db.py creates users, teams, activity, leaderboard, and workouts
 - users will be super hero users
 - Include steps to migrate in the octofit_tracker project
 ```
@@ -31,12 +31,18 @@ Let's use manage.py to get the database setup and populated based on fields in m
 ![create the populate_db.py step 1_1](./6_2_PopulateDBwDataStep1_1.png)
 ![create the populate_db.py step 1_2](./6_2_PopulateDBwDataStep1_2.png)
 
+### Commands to create the directory structure for populate_db.py
+
+```bash
+mkdir -p octofit-tracker/backend/octofit_tracker/management/commands
+touch octofit-tracker/backend/octofit_tracker/management/_init_.py
+touch octofit-tracker/backend/octofit_tracker/management/commands/_init_.py
+```
+
 ### Sample code for populate_db.py
 
 ```python
 # FILE: octofit-tracker/backend/octofit_tracker/management/commands/populate_db.py
-
-# octofit_tracker/management/commands/populate_db.py
 
 from django.core.management.base import BaseCommand
 from octofit_tracker.models import User, Team, Activity, Leaderboard, Workout
@@ -45,7 +51,7 @@ from pymongo import MongoClient
 from datetime import timedelta
 
 class Command(BaseCommand):
-    help = 'Populate the database with superhero users, teams, activities, leaderboards, and workouts'
+    help = 'Populate the database with superhero users, teams, activity, leaderboard, and workouts'
 
     def handle(self, *args, **kwargs):
         # Connect to MongoDB
@@ -55,8 +61,8 @@ class Command(BaseCommand):
         # Drop existing collections
         db.users.drop()
         db.teams.drop()
-        db.activities.drop()
-        db.leaderboards.drop()
+        db.activity.drop()
+        db.leaderboard.drop()
         db.workouts.drop()
 
         # Populate users
@@ -95,8 +101,8 @@ class Command(BaseCommand):
             else:
                 self.stdout.write(self.style.WARNING(f'Team {team.name} already exists'))
 
-        # Populate activities
-        activities = [
+        # Populate activity
+        activity = [
             {'user': user_objects[0], 'activity_type': 'Flying', 'duration': timedelta(hours=1)},
             {'user': user_objects[1], 'activity_type': 'Martial Arts', 'duration': timedelta(hours=2)},
             {'user': user_objects[2], 'activity_type': 'Training', 'duration': timedelta(hours=1, minutes=30)},
@@ -104,15 +110,15 @@ class Command(BaseCommand):
             {'user': user_objects[4], 'activity_type': 'Swimming', 'duration': timedelta(hours=1, minutes=15)},
         ]
 
-        for activity_data in activities:
+        for activity_data in activity:
             activity, created = Activity.objects.get_or_create(**activity_data)
             if created:
                 self.stdout.write(self.style.SUCCESS(f'Successfully created activity for {activity.user.username}'))
             else:
                 self.stdout.write(self.style.WARNING(f'Activity for {activity.user.username} already exists'))
 
-        # Populate leaderboards
-        leaderboards = [
+        # Populate leaderboard
+        leaderboard = [
             {'user': user_objects[0], 'score': 100},
             {'user': user_objects[1], 'score': 90},
             {'user': user_objects[2], 'score': 95},
@@ -120,7 +126,7 @@ class Command(BaseCommand):
             {'user': user_objects[4], 'score': 80},
         ]
 
-        for leaderboard_data in leaderboards:
+        for leaderboard_data in leaderboard:
             leaderboard, created = Leaderboard.objects.get_or_create(**leaderboard_data)
             if created:
                 self.stdout.write(self.style.SUCCESS(f'Successfully created leaderboard entry for {leaderboard.user.username}'))
@@ -133,7 +139,7 @@ class Command(BaseCommand):
             {'name': 'Martial Arts Training', 'description': 'Training for martial arts'},
             {'name': 'Amazonian Training', 'description': 'Training for Amazonian warriors'},
             {'name': 'Speed Training', 'description': 'Training for super speed'},
-            {'name': 'Aquatic Training', 'description': 'Training for underwater activities'},
+            {'name': 'Aquatic Training', 'description': 'Training for underwater activity'},
         ]
 
         for workout_data in workouts:
@@ -143,7 +149,5 @@ class Command(BaseCommand):
             else:
                 self.stdout.write(self.style.WARNING(f'Workout {workout.name} already exists'))
 ```
-
-![Migrate and populate db](./5_3_MigratePopulateDb.png)
 
 [:arrow_backward: Previous: The OctoFit Tracker database and app backend creation](../5_BackendSettings/README.md) | [Next: Using the Codespace endpoint to access the Django REST Framework :arrow_forward:](../7_CodespaceDjangoRESTFramework/README.md)
