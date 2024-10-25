@@ -139,7 +139,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class TeamSerializer(serializers.ModelSerializer):
     _id = ObjectIdField()
-    members = serializers.ListField(child=ObjectIdField())
+    members = UserSerializer(many=True)
 
     class Meta:
         model = Team

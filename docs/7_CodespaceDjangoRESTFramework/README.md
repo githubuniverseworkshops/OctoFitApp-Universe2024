@@ -87,10 +87,27 @@ class WorkoutViewSet(viewsets.ModelViewSet):
     serializer_class = WorkoutSerializer
 ```
 
-## Run the server
+## Run the server via manage.py
 
 ```bash
 python manage.py runserver
+```
+
+## Django REST API framwork :: users, teams, activity, leaderboard, workouts
+
+![Django REST API framwork :: users, teams, activity, leaderboard, workouts](<Rewatch GIF Recording - 2024-10-25 at 7.49.58 PM.gif>)
+
+## GitHub Copilot Chat commands to help debug issues
+
+```text
+/help
+
+#selection - The current selection in the active editor
+#codebase - Searches through the codebase and pulls out relevant information for the query.
+#editor - The visible source code in the active editor
+#terminalLastCommand - The active terminal's last run command
+#terminalSelection - The active terminal's selection
+#file - Choose a file in the workspace
 ```
 
 [:arrow_backward: Previous: Populate DB data](../6_PopulateDBwData) | [Next: What's next :arrow_forward:](../8_WhatsNext/README.md)
