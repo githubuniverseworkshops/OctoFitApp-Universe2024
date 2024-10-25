@@ -15,6 +15,11 @@ In our next steps lets think step by step and setup the following in this order
 5. In octofit_tracker project setup and use command touch models.py, serializers.py, urls.py, and views.py for users, teams, activity, leaderboard, and workouts
 6. Generate code for models.py, serializers.py, and views.py and
 7. make sure urls.py has a root, admin, and api endpoints
+    urlpatterns = [
+        path('', api_root, name='api-root'),  # Root endpoint
+        path('admin/', admin.site.urls),  # Admin endpoint
+        path('api/', include(router.urls)),  # API endpoint
+    ]
 ```
 
 ![OctoFit Tracker backend prompt](./5_1_BackendSettingsPrompt.png)</br>
@@ -35,9 +40,9 @@ db.createCollection("leaderboard")
 db.createCollection("workouts")
 db.users.createIndex({ "email": 1 }, { unique: true })
 db.teams.createIndex({ "name": 1 }, { unique: true })
-db.activity.createIndex({ "user": 1, "activity_type": 1 }, { unique: true })
-db.leaderboard.createIndex({ "user": 1 }, { unique: true })
-db.workouts.createIndex({ "user": 1 }, { unique: true })
+db.activity.createIndex({ "activity_id": 1 }, { unique: true })
+db.leaderboard.createIndex({ "leaderboard_id": 1 }, { unique: true })
+db.workouts.createIndex({ "workout_id": 1 }, { unique: true })
 exit
 ```
 
@@ -80,32 +85,33 @@ INSTALLED_APPS = [
 # FILE: octofit-tracker/backend/octofit_tracker/models.py
 
 from djongo import models
-from django.core.exceptions import ValidationError
 
 class User(models.Model):
-    email = models.EmailField(unique=True)
+    _id = models.ObjectIdField()
     username = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
     password = models.CharField(max_length=100)
 
 class Team(models.Model):
+    _id = models.ObjectIdField()
     name = models.CharField(max_length=100)
-    members = models.ArrayReferenceField(
-        to=User,
-        on_delete=models.CASCADE
-    )
+    members = models.ArrayReferenceField(to=User, on_delete=models.CASCADE)
 
 class Activity(models.Model):
+    _id = models.ObjectIdField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     activity_type = models.CharField(max_length=100)
-    duration = models.IntegerField()
+    duration = models.DurationField()
 
 class Leaderboard(models.Model):
+    _id = models.ObjectIdField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField()
 
 class Workout(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    workout_plan = models.TextField()
+    _id = models.ObjectIdField()
+    name = models.CharField(max_length=100)
+    description = models.TextField()
 ```
 
 #### serializers.py
@@ -145,11 +151,24 @@ class WorkoutSerializer(serializers.ModelSerializer):
 #### views.py
 
 ```python
-# FILE: octofit_tracker/views.py
+# FILE: octofit-tracker/backend/octofit_tracker/views.py
 
-from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
-from rest_framework.response import Response
+from rest_framework import viewsets
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
+from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
+from .models import User, Team, Activity, Leaderboard, Workout
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'users': reverse('user-list', request=request, format=format),
+        'teams': reverse('team-list', request=request, format=format),
+        'activity': reverse('activity-list', request=request, format=format),
+        'leaderboard': reverse('leaderboard-list', request=request, format=format),
+        'workouts': reverse('workout-list', request=request, format=format),
+    })
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -170,23 +189,12 @@ class LeaderboardViewSet(viewsets.ModelViewSet):
 class WorkoutViewSet(viewsets.ModelViewSet):
     queryset = Workout.objects.all()
     serializer_class = WorkoutSerializer
-
-@api_view(['GET'])
-def api_root(request, format=None):
-    base_url = 'http://upgraded-space-happiness-959pr7vpgw3p7vv-8000.app.github.dev/'
-    return Response({
-        'users': base_url + 'api/users/?format=api',
-        'teams': base_url + 'api/teams/?format=api',
-        'activity': base_url + 'api/activity/?format=api',
-        'leaderboard': base_url + 'api/leaderboard/?format=api',
-        'workouts': base_url + 'api/workouts/?format=api'
-    })
 ```
 
 #### urls.py
 
 ```python
-# FILE: octofit_tracker/urls.py
+# FILE: octofit-tracker/backend/octofit_tracker/urls.py
 
 from django.contrib import admin
 from django.urls import path, include
@@ -196,8 +204,8 @@ from .views import UserViewSet, TeamViewSet, ActivityViewSet, LeaderboardViewSet
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'teams', TeamViewSet)
-router.register(r'activity', ActivityViewSet)
-router.register(r'leaderboard', LeaderboardViewSet)
+router.register(r'activities', ActivityViewSet)
+router.register(r'leaderboards', LeaderboardViewSet)
 router.register(r'workouts', WorkoutViewSet)
 
 urlpatterns = [
@@ -207,7 +215,7 @@ urlpatterns = [
 ]
 ```
 
-## GitHub Copilot commands to help debug issues
+## GitHub Copilot Chat commands to help debug issues
 
 ```text
 /help

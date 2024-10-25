@@ -7,7 +7,7 @@ Type the following prompt in GitHub Copilot Chat:
 ```text
 Let's do the following step by step
 
-- update #file:views.py to replace the return for the rest api url endpiints with the codespace url http://upgraded-space-happiness-959pr7vpgw3p7vv.github.dev/-8000.app.github.dev for django
+- update #file:views.py to replace the return for the rest api url endpiints with the codespace url http://[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev for django
 - Replace <codespace-name> with [REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]
 - Run the Django server
 

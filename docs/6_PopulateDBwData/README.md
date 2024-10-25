@@ -21,7 +21,7 @@ Type the following prompt in GitHub Copilot Chat:
 ```text
 Let's use manage.py to get the database setup and populated based on fields in models.py
 
-- Create populate_db.py so it initializes and deletes previous data and recreates it
+- Create populate_db.py as a manage.py command so it initializes and deletes previous data and recreates it
 - populate_db.py creates users, teams, activity, leaderboard, and workouts
 - users will be super hero users
 - Include steps to migrate in the octofit_tracker project
@@ -35,8 +35,9 @@ Let's use manage.py to get the database setup and populated based on fields in m
 
 ```bash
 mkdir -p octofit-tracker/backend/octofit_tracker/management/commands
-touch octofit-tracker/backend/octofit_tracker/management/_init_.py
-touch octofit-tracker/backend/octofit_tracker/management/commands/_init_.py
+touch octofit-tracker/backend/octofit_tracker/management/__init__.py
+touch octofit-tracker/backend/octofit_tracker/management/commands/__init__.py
+touch octofit-tracker/backend/octofit_tracker/management/commands/populate_db.py
 ```
 
 ### Sample code for populate_db.py
@@ -102,7 +103,7 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.WARNING(f'Team {team.name} already exists'))
 
         # Populate activity
-        activity = [
+        activities = [
             {'user': user_objects[0], 'activity_type': 'Flying', 'duration': timedelta(hours=1)},
             {'user': user_objects[1], 'activity_type': 'Martial Arts', 'duration': timedelta(hours=2)},
             {'user': user_objects[2], 'activity_type': 'Training', 'duration': timedelta(hours=1, minutes=30)},
@@ -110,7 +111,7 @@ class Command(BaseCommand):
             {'user': user_objects[4], 'activity_type': 'Swimming', 'duration': timedelta(hours=1, minutes=15)},
         ]
 
-        for activity_data in activity:
+        for activity_data in activities:
             activity, created = Activity.objects.get_or_create(**activity_data)
             if created:
                 self.stdout.write(self.style.SUCCESS(f'Successfully created activity for {activity.user.username}'))
@@ -118,7 +119,7 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.WARNING(f'Activity for {activity.user.username} already exists'))
 
         # Populate leaderboard
-        leaderboard = [
+        leaderboards = [
             {'user': user_objects[0], 'score': 100},
             {'user': user_objects[1], 'score': 90},
             {'user': user_objects[2], 'score': 95},
@@ -126,7 +127,7 @@ class Command(BaseCommand):
             {'user': user_objects[4], 'score': 80},
         ]
 
-        for leaderboard_data in leaderboard:
+        for leaderboard_data in leaderboards:
             leaderboard, created = Leaderboard.objects.get_or_create(**leaderboard_data)
             if created:
                 self.stdout.write(self.style.SUCCESS(f'Successfully created leaderboard entry for {leaderboard.user.username}'))
@@ -150,7 +151,16 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.WARNING(f'Workout {workout.name} already exists'))
 ```
 
-## GitHub Copilot commands to help debug issues
+### Run the following commands to migrate the database and populate it with data
+
+```bash
+cd octofit-tracker/backend
+python manage.py makemigrations
+python manage.py migrate
+python manage.py populate_db
+```
+
+## GitHub Copilot Chat commands to help debug issues
 
 ```text
 /help

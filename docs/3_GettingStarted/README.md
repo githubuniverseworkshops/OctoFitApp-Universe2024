@@ -32,7 +32,8 @@ generate instructions in this order
 6. Setup the octofit-tracker/frontend directory will store the react app with no subdirectories
 7. install react framework
 8. Install bootstrap and import it
-9. Install mongodb via 'apt-get' and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
+9. Commands to install mongodb via 'apt-get' 
+10. Commands start mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
 
 Tha directory tree for the OctoFit Tracker App
 
@@ -70,9 +71,9 @@ Let's think about this step by step
 Important to avoid using public code and we do NOT need to initialize the git repository
 ```
 
-![create project plan](./3_1_AskCopilotProjectCreation.png)</br>
+![create project plan](./3_1_GettingStartedPromptProjectCreation.png)</br>
 
-![step by step](./3_2_StepByStep.png)</br>
+![step by step](./3_2_GettingStartedStepByStep.png)</br>
 
 ![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)</br>
 
@@ -81,22 +82,22 @@ Important to avoid using public code and we do NOT need to initialize the git re
 ```bash
 mkdir -p octofit-tracker/{backend,frontend}
 
-cd octofit-tracker/backend
 python3 -m venv octofit-tracker/backend/venv
 source octofit-tracker/backend/venv/bin/activate
 pip install -r octofit-tracker/requirements.txt
-django-admin startproject octofit_tracker .
 
-touch octofit_tracker/{models,serializers,views}.py
+django-admin startproject octofit_tracker octofit-tracker/backend
+
+npx create-react-app octofit-tracker/frontend
 
 cd ../frontend
-npx create-react-app .
 npm install bootstrap
 
 echo "import 'bootstrap/dist/css/bootstrap.min.css';" >> src/index.js
 
 sudo apt-get update
 sudo apt-get install -y mongodb
+
 sudo service mongodb start
 sudo service mongodb status
 ```
