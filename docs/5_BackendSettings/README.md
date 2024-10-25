@@ -7,13 +7,19 @@ Type the following prompt in GitHub Copilot Chat:
 ```text
 In our next steps lets think step by step and setup the following in this order
 
-1. Initialize the mongo octofit_db database and create a correct table structure for users, teams, activities, leaderboards, and workouts collections
+1. Initialize the mongo octofit_db database and create a correct table structure for users, teams, activity, leaderboard, and workouts collections
 2. Make sure there is a unique id for primary key for the user collection 
    ex. db.users.createIndex({ "email": 1 }, { unique: true })
 3. settings.py in our django project for mongodb octofit_db database including localhost and the port
 4. settings.py in our django project setup for all installed apps. ex djongo, octofit_tracker, rest_framework
-5. In octofit_tracker project setup and use command touch models.py, serializers.py, urls.py, and views.py for users, teams, activities, leaderboards, and workouts
-6. make sure urls.py has a root, admin, and api endpoints
+5. In octofit_tracker project setup and use command touch models.py, serializers.py, urls.py, and views.py for users, teams, activity, leaderboard, and workouts
+6. Generate code for models.py, serializers.py, and views.py and
+7. make sure urls.py has a root, admin, and api endpoints
+    urlpatterns = [
+        path('', api_root, name='api-root'),  # Root endpoint
+        path('admin/', admin.site.urls),  # Admin endpoint
+        path('api/', include(router.urls)),  # API endpoint
+    ]
 ```
 
 ![OctoFit Tracker backend prompt](./5_1_BackendSettingsPrompt.png)</br>
@@ -21,6 +27,24 @@ In our next steps lets think step by step and setup the following in this order
 ![OctoFit Tracker backend response step 2 and 3](./5_2_BackendSettingsStep2Step3_1.png)</br>
 ![OctoFit Tracker backend response step 3 continued](./5_2_BackendSettingsStep3_2.png)</br>
 ![OctoFit Tracker backend response step 3 continued](./5_2_BackendSettingsStep3_3.png)</br>
+
+### MongoDB commands to setup `octofit_db`
+
+```bash
+mongo
+use octofit_db
+db.createCollection("users")
+db.createCollection("teams")
+db.createCollection("activity")
+db.createCollection("leaderboard")
+db.createCollection("workouts")
+db.users.createIndex({ "email": 1 }, { unique: true })
+db.teams.createIndex({ "name": 1 }, { unique: true })
+db.activity.createIndex({ "activity_id": 1 }, { unique: true })
+db.leaderboard.createIndex({ "leaderboard_id": 1 }, { unique: true })
+db.workouts.createIndex({ "workout_id": 1 }, { unique: true })
+exit
+```
 
 ### Sample settings.py
 
@@ -127,11 +151,24 @@ class WorkoutSerializer(serializers.ModelSerializer):
 #### views.py
 
 ```python
-# FILE: octofit_tracker/views.py
+# FILE: octofit-tracker/backend/octofit_tracker/views.py
 
-from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
-from rest_framework.response import Response
+from rest_framework import viewsets
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
+from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
+from .models import User, Team, Activity, Leaderboard, Workout
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'users': reverse('user-list', request=request, format=format),
+        'teams': reverse('team-list', request=request, format=format),
+        'activity': reverse('activity-list', request=request, format=format),
+        'leaderboard': reverse('leaderboard-list', request=request, format=format),
+        'workouts': reverse('workout-list', request=request, format=format),
+    })
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -152,23 +189,12 @@ class LeaderboardViewSet(viewsets.ModelViewSet):
 class WorkoutViewSet(viewsets.ModelViewSet):
     queryset = Workout.objects.all()
     serializer_class = WorkoutSerializer
-
-@api_view(['GET'])
-def api_root(request, format=None):
-    base_url = 'http://upgraded-space-happiness-959pr7vpgw3p7vv-8000.app.github.dev/'
-    return Response({
-        'users': base_url + 'api/users/?format=api',
-        'teams': base_url + 'api/teams/?format=api',
-        'activities': base_url + 'api/activities/?format=api',
-        'leaderboards': base_url + 'api/leaderboards/?format=api',
-        'workouts': base_url + 'api/workouts/?format=api'
-    })
 ```
 
 #### urls.py
 
 ```python
-# FILE: octofit_tracker/urls.py
+# FILE: octofit-tracker/backend/octofit_tracker/urls.py
 
 from django.contrib import admin
 from django.urls import path, include
@@ -187,6 +213,19 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # Admin endpoint
     path('api/', include(router.urls)),  # API endpoint
 ]
+```
+
+## GitHub Copilot Chat commands to help debug issues
+
+```text
+/help
+
+#selection - The current selection in the active editor
+#codebase - Searches through the codebase and pulls out relevant information for the query.
+#editor - The visible source code in the active editor
+#terminalLastCommand - The active terminal's last run command
+#terminalSelection - The active terminal's selection
+#file - Choose a file in the workspace
 ```
 
 [:arrow_backward: Previous: Let's work on front end](../4_FrontEndWork/README.md) | [Next: Populate the database with sample data :arrow_forward:](../6_PopulateDBwData/README.md)

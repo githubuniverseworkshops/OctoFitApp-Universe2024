@@ -24,7 +24,7 @@ In this workshop, you'll:
 - User authentication and profiles
 - Activity logging and tracking
 - Team creation and management
-- Competitive leaderboards
+- A competitive leaderboard
 - Personalized workout suggestions
 
 ### GitHub Copilot and Copilot Chat

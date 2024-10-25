@@ -65,7 +65,7 @@ function App() {
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/profile">Profile</a></li>
-          <li><a href="/activities">Activities</a></li>
+          <li><a href="/activity">Activity</a></li>
           <li><a href="/teams">Teams</a></li>
           <li><a href="/leaderboard">Leaderboard</a></li>
           <li><a href="/workouts">Workouts</a></li>

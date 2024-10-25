@@ -30,8 +30,10 @@ generate instructions in this order
 4. The Django project octofit-tracker directory will have all the backend components for the app
 5. Create the django app directly in the directory octofit_tracker/backend
 6. Setup the octofit-tracker/frontend directory will store the react app with no subdirectories
-7. Install bootstrap and import it
-8. Install mongodb via 'apt-get' and setup mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
+7. install react framework
+8. Install bootstrap and import it
+9. Commands to install mongodb via 'apt-get' 
+10. Commands start mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
 
 Tha directory tree for the OctoFit Tracker App
 
@@ -69,10 +71,35 @@ Let's think about this step by step
 Important to avoid using public code and we do NOT need to initialize the git repository
 ```
 
-![create project plan](./3_1_AskCopilotProjectCreation.png)</br>
+![create project plan](./3_1_GettingStartedPromptProjectCreation.png)</br>
 
-![step by step](./3_2_StepByStep.png)</br>
+![step by step](./3_2_GettingStartedStepByStep.png)</br>
 
 ![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)</br>
+
+### Cheat sheet of commands to use to create the OctoFit Tracker structure
+
+```bash
+mkdir -p octofit-tracker/{backend,frontend}
+
+python3 -m venv octofit-tracker/backend/venv
+source octofit-tracker/backend/venv/bin/activate
+pip install -r octofit-tracker/requirements.txt
+
+django-admin startproject octofit_tracker octofit-tracker/backend
+
+npx create-react-app octofit-tracker/frontend
+
+cd ../frontend
+npm install bootstrap
+
+echo "import 'bootstrap/dist/css/bootstrap.min.css';" >> src/index.js
+
+sudo apt-get update
+sudo apt-get install -y mongodb
+
+sudo service mongodb start
+sudo service mongodb status
+```
 
 [:arrow_backward: Previous: Prerequisites and development environment setup](../2_Prerequisites/README.md) | [Next: Let's work on front end stuff :arrow_forward:](../4_FrontEndWork/README.md)

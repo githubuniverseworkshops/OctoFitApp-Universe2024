@@ -21,8 +21,8 @@ Type the following prompt in GitHub Copilot Chat:
 ```text
 Let's use manage.py to get the database setup and populated based on fields in models.py
 
-- Create populate_db.py so it initializes and deletes previous data and recreates it
-- populate_db.py creates users, teams, activities, leaderboards, and workouts
+- Create populate_db.py as a manage.py command so it initializes and deletes previous data and recreates it
+- populate_db.py creates users, teams, activity, leaderboard, and workouts
 - users will be super hero users
 - Include steps to migrate in the octofit_tracker project
 ```
@@ -31,12 +31,19 @@ Let's use manage.py to get the database setup and populated based on fields in m
 ![create the populate_db.py step 1_1](./6_2_PopulateDBwDataStep1_1.png)
 ![create the populate_db.py step 1_2](./6_2_PopulateDBwDataStep1_2.png)
 
+### Commands to create the directory structure for populate_db.py
+
+```bash
+mkdir -p octofit-tracker/backend/octofit_tracker/management/commands
+touch octofit-tracker/backend/octofit_tracker/management/__init__.py
+touch octofit-tracker/backend/octofit_tracker/management/commands/__init__.py
+touch octofit-tracker/backend/octofit_tracker/management/commands/populate_db.py
+```
+
 ### Sample code for populate_db.py
 
 ```python
 # FILE: octofit-tracker/backend/octofit_tracker/management/commands/populate_db.py
-
-# octofit_tracker/management/commands/populate_db.py
 
 from django.core.management.base import BaseCommand
 from octofit_tracker.models import User, Team, Activity, Leaderboard, Workout
@@ -45,7 +52,7 @@ from pymongo import MongoClient
 from datetime import timedelta
 
 class Command(BaseCommand):
-    help = 'Populate the database with superhero users, teams, activities, leaderboards, and workouts'
+    help = 'Populate the database with superhero users, teams, activity, leaderboard, and workouts'
 
     def handle(self, *args, **kwargs):
         # Connect to MongoDB
@@ -55,8 +62,8 @@ class Command(BaseCommand):
         # Drop existing collections
         db.users.drop()
         db.teams.drop()
-        db.activities.drop()
-        db.leaderboards.drop()
+        db.activity.drop()
+        db.leaderboard.drop()
         db.workouts.drop()
 
         # Populate users
@@ -95,7 +102,7 @@ class Command(BaseCommand):
             else:
                 self.stdout.write(self.style.WARNING(f'Team {team.name} already exists'))
 
-        # Populate activities
+        # Populate activity
         activities = [
             {'user': user_objects[0], 'activity_type': 'Flying', 'duration': timedelta(hours=1)},
             {'user': user_objects[1], 'activity_type': 'Martial Arts', 'duration': timedelta(hours=2)},
@@ -111,7 +118,7 @@ class Command(BaseCommand):
             else:
                 self.stdout.write(self.style.WARNING(f'Activity for {activity.user.username} already exists'))
 
-        # Populate leaderboards
+        # Populate leaderboard
         leaderboards = [
             {'user': user_objects[0], 'score': 100},
             {'user': user_objects[1], 'score': 90},
@@ -133,7 +140,7 @@ class Command(BaseCommand):
             {'name': 'Martial Arts Training', 'description': 'Training for martial arts'},
             {'name': 'Amazonian Training', 'description': 'Training for Amazonian warriors'},
             {'name': 'Speed Training', 'description': 'Training for super speed'},
-            {'name': 'Aquatic Training', 'description': 'Training for underwater activities'},
+            {'name': 'Aquatic Training', 'description': 'Training for underwater activity'},
         ]
 
         for workout_data in workouts:
@@ -144,6 +151,26 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.WARNING(f'Workout {workout.name} already exists'))
 ```
 
-![Migrate and populate db](./5_3_MigratePopulateDb.png)
+### Run the following commands to migrate the database and populate it with data
+
+```bash
+cd octofit-tracker/backend
+python manage.py makemigrations
+python manage.py migrate
+python manage.py populate_db
+```
+
+## GitHub Copilot Chat commands to help debug issues
+
+```text
+/help
+
+#selection - The current selection in the active editor
+#codebase - Searches through the codebase and pulls out relevant information for the query.
+#editor - The visible source code in the active editor
+#terminalLastCommand - The active terminal's last run command
+#terminalSelection - The active terminal's selection
+#file - Choose a file in the workspace
+```
 
 [:arrow_backward: Previous: The OctoFit Tracker database and app backend creation](../5_BackendSettings/README.md) | [Next: Using the Codespace endpoint to access the Django REST Framework :arrow_forward:](../7_CodespaceDjangoRESTFramework/README.md)
