@@ -150,4 +150,17 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.WARNING(f'Workout {workout.name} already exists'))
 ```
 
+## GitHub Copilot commands to help debug issues
+
+```text
+/help
+
+#selection - The current selection in the active editor
+#codebase - Searches through the codebase and pulls out relevant information for the query.
+#editor - The visible source code in the active editor
+#terminalLastCommand - The active terminal's last run command
+#terminalSelection - The active terminal's selection
+#file - Choose a file in the workspace
+```
+
 [:arrow_backward: Previous: The OctoFit Tracker database and app backend creation](../5_BackendSettings/README.md) | [Next: Using the Codespace endpoint to access the Django REST Framework :arrow_forward:](../7_CodespaceDjangoRESTFramework/README.md)

@@ -25,6 +25,7 @@ In our next steps lets think step by step and setup the following in this order
 
 ### MongoDB commands to setup `octofit_db`
 
+```bash
 mongo
 use octofit_db
 db.createCollection("users")
@@ -38,6 +39,7 @@ db.activity.createIndex({ "user": 1, "activity_type": 1 }, { unique: true })
 db.leaderboard.createIndex({ "user": 1 }, { unique: true })
 db.workouts.createIndex({ "user": 1 }, { unique: true })
 exit
+```
 
 ### Sample settings.py
 
@@ -203,6 +205,19 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # Admin endpoint
     path('api/', include(router.urls)),  # API endpoint
 ]
+```
+
+## GitHub Copilot commands to help debug issues
+
+```text
+/help
+
+#selection - The current selection in the active editor
+#codebase - Searches through the codebase and pulls out relevant information for the query.
+#editor - The visible source code in the active editor
+#terminalLastCommand - The active terminal's last run command
+#terminalSelection - The active terminal's selection
+#file - Choose a file in the workspace
 ```
 
 [:arrow_backward: Previous: Let's work on front end](../4_FrontEndWork/README.md) | [Next: Populate the database with sample data :arrow_forward:](../6_PopulateDBwData/README.md)
