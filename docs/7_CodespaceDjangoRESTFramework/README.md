@@ -87,4 +87,10 @@ class WorkoutViewSet(viewsets.ModelViewSet):
     serializer_class = WorkoutSerializer
 ```
 
+## Run the server
+
+```bash
+python manage.py runserver
+```
+
 [:arrow_backward: Previous: Populate DB data](../6_PopulateDBwData) | [Next: What's next :arrow_forward:](../8_WhatsNext/README.md)
