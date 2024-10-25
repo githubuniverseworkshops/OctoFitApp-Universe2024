@@ -1,4 +1,4 @@
-# Getting started
+# Getting started - app frontend and backend creation
 
 In this section, we will start by setting up the face of our OctoFit application by building the front end page. To do that, we will keep it as simple as possible for now. We need resources like HTML and CSS to start decorating first, and we will later modify the page to extend the functionalities.
 
@@ -75,4 +75,4 @@ Important to avoid using public code and we do NOT need to initialize the git re
 
 ![octofit-tracker app directory tree](./3_3_OctoFitTrackerDirTree.png)</br>
 
-[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites) | [Next :: OctoFit Tracker database and app backend setup](../4_BackendSettings/)
+[Back :: Previous: Prerequisites and development environment setup](../2_Prerequisites/README.md) | [Next :: The OctoFit Tracker database and app backend creation](../4_BackendSettings/README.md)

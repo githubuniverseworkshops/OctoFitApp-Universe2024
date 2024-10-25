@@ -1,4 +1,4 @@
-# Your journey to develop a fitness tracker app with GitHub Copilot now begins!
+# The OctoFit Tracker app story
 
 ![OctoFit Tracker](../../images/octofit-tracker.png)
 
@@ -105,4 +105,4 @@ Join us for this exciting journey into the future of software development, where
 
 In this workshop, you are going to assume to be the lead developer. You will be responsible for building the application with GitHub Copilot’s help. Good luck!
 
-[Next: Prerequisite and setup of the development environment](../2_Prerequisites)
+[Next: Prerequisite and setup of the development environment](../2_Prerequisites/README.md)
