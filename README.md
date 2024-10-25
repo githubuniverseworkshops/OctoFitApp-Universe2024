@@ -26,12 +26,12 @@ This workshop involves several technology stacks, therefore it is essential that
 
 Without further ado, let's get started.
 
-## Table of Contents (Total Estimated Time: About 30 minutes)
+## Table of Contents
 
-1. [The OctoFit Tracker app story](docs/1_Story/README.md) - :alarm_clock: Estimated Time: 2 minutes
-2. [Prerequisites and a setup of the development environment](docs/2_Prerequisites/README.md) - :alarm_clock: Estimated Time: 5 minutes
-3. [Getting started - app frontend and backend creation](docs/3_GettingStarted/README.md) - :alarm_clock: Estimated Time: 5 minutes
-4. [The OctoFit Tracker database and app backend creation](docs/4_BackendSettings/README.md) - :alarm_clock: Estimated Time: 5 minutes
-5. [Populate the database with sample data](docs/5_PopulateDBwData/README.md) - :alarm_clock: Estimated Time: 5 minutes
-6. [Using the Codespace endpoint to access the Django REST Framework](docs/6_CodespaceDjangoRESTFramework/README.md) - :alarm_clock: Estimated Time: 5 minutes
+1. [The OctoFit Tracker app story](docs/1_Story/README.md)
+2. [Prerequisites and a setup of the development environment](docs/2_Prerequisites/README.md)
+3. [Getting started - app frontend and backend creation](docs/3_GettingStarted/README.md)
+4. [The OctoFit Tracker database and app backend creation](docs/4_BackendSettings/README.md)
+5. [Populate the database with sample data](docs/5_PopulateDBwData/README.md)
+6. [Using the Codespace endpoint to access the Django REST Framework](docs/6_CodespaceDjangoRESTFramework/README.md)
 7. [:fire: REFERENCE - Troubleshooting guide and FAQs](docs/7_Troubleshooting/README.md)
