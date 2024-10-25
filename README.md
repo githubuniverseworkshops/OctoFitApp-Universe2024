@@ -26,7 +26,7 @@ This workshop involves several technology stacks, therefore it is essential that
 
 Without further ado, let's get started.
 
-## Table of Contents (:alarm_clock: Total Estimated Time: About 30 minutes)
+## Table of Contents (Total Estimated Time: About 30 minutes)
 
 1. [The OctoFit Tracker app story](docs/1_Story/README.md) - :alarm_clock: Estimated Time: 2 minutes
 2. [Prerequisites and a setup of the development environment](docs/2_Prerequisites/README.md) - :alarm_clock: Estimated Time: 5 minutes
