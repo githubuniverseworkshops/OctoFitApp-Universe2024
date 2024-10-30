@@ -8,7 +8,7 @@ What's next? From here, you can continue to leverage **GitHub Copilot** to finis
 
 Make sure to leave the feedback on the workshop and the documentation by following this link:
 
-[:speech_balloon: We want to hear from you! - **github.com/orgs/community/discussions/142536**](https://github.com/orgs/community/discussions/142536)
+[:speech_balloon: We want to hear from you! Please add comments to the discussion - **gh.io/octofitapp-discussion**](https://github.com/orgs/community/discussions/142536)
 
 Thank you again. Happy coding with **GitHub Copilot**!
 
