@@ -23,4 +23,4 @@ Make sure to leave the feedback on the workshop and the documentation by followi
 
 Thank you again. Happy coding with **GitHub Copilot**!
 
-[:house_with_garden: Go back to the main page](../../README.md)
+[Go back to the main page](../../README.md)

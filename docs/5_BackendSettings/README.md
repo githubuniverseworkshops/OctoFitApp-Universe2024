@@ -249,4 +249,4 @@ urlpatterns = [
 #file - Choose a file in the workspace
 ```
 
-[:arrow_backward: Previous: Let's work on front end](../4_FrontEndWork/README.md) | [Next: Populate the database with sample data :arrow_forward:](../6_PopulateDBwData/README.md)
+[Previous: Let's work on front end](../4_FrontEndWork/README.md) | [Next: Populate the database with sample data](../6_PopulateDBwData/README.md)

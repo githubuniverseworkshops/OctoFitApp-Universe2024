@@ -154,4 +154,4 @@ npm start
 
 Check the browser at the port `8080` to see the changes.
 
-[:arrow_backward: Previous: Getting started - app frontend and backend creation](../3_GettingStarted/README.md) | [Next: The OctoFit Tracker database and app backend creation :arrow_forward:](../5_BackendSettings/README.md)
+[Previous: Getting started - app frontend and backend creation](../3_GettingStarted/README.md) | [Next: The OctoFit Tracker database and app backend creation](../5_BackendSettings/README.md)

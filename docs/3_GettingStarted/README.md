@@ -102,4 +102,4 @@ sudo service mongodb start
 sudo service mongodb status
 ```
 
-[:arrow_backward: Previous: Prerequisites and development environment setup](../2_Prerequisites/README.md) | [Next: Let's work on front end stuff :arrow_forward:](../4_FrontEndWork/README.md)
+[Previous: Prerequisites and development environment setup](../2_Prerequisites/README.md) | [Next: Let's work on front end stuff](../4_FrontEndWork/README.md)

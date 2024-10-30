@@ -173,4 +173,4 @@ python manage.py populate_db
 #file - Choose a file in the workspace
 ```
 
-[:arrow_backward: Previous: The OctoFit Tracker database and app backend creation](../5_BackendSettings/README.md) | [Next: Using the Codespace endpoint to access the Django REST Framework :arrow_forward:](../7_CodespaceDjangoRESTFramework/README.md)
+[Previous: The OctoFit Tracker database and app backend creation](../5_BackendSettings/README.md) | [Next: Using the Codespace endpoint to access the Django REST Framework](../7_CodespaceDjangoRESTFramework/README.md)
