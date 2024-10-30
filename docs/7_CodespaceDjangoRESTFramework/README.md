@@ -110,4 +110,4 @@ python manage.py runserver
 #file - Choose a file in the workspace
 ```
 
-[:arrow_backward: Previous: Populate DB data](../6_PopulateDBwData) | [Next: What's next :arrow_forward:](../8_WhatsNext/README.md)
+[Previous: Populate DB data](../6_PopulateDBwData) | [Next: What's next](../8_WhatsNext/README.md)

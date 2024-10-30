@@ -15,7 +15,7 @@ In this workshop, you'll:
 3. Build key components of the **OctoFit Tracker** app
 4. Learn best practices and prompting techniques for working with **GitHub Copilot**
 
-> :blue_book: **NOTE**: Because we have only 20 minutes for the actual workshop, it is possible that we cannot complete everything. However, we will have the value of troubleshooting together, and there is also a [self-paced exercise](https://gh.io/octofit-tutorial) if you want to follow along later.
+> **NOTE**: Because we have only 20 minutes for the actual workshop, it is possible that we cannot complete everything. However, we will have the value of troubleshooting together. And here is [gh.io/octofit-tutorial-codespace](https://gh.io/octofit-tutorial-codespace) where you can follow along later, and there is also a non-Codespace version [self-paced exercise - Coming Soon!](https://gh.io/octofit-tutorial) if you want to follow along later.
 
 ### Application Features
 
@@ -107,4 +107,4 @@ Join us for this exciting journey into the future of software development, where
 
 In this workshop, you are going to assume to be the lead developer. You will be responsible for building the application with GitHub Copilot’s help. Good luck!
 
-[Next: Prerequisite and setup of the development environment :arrow_forward:](../2_Prerequisites/README.md)
+[Next: Prerequisite and setup of the development environment](../2_Prerequisites/README.md)

@@ -40,4 +40,4 @@ When the codespace is created you may get the following message for the GitHub C
 
 If you ever get stuck, don't worry. Please check out the [troubleshooting guide](../9_Troubleshooting/), and GitHub Experts will be here to help you.
 
-[:arrow_backward: Previous: The OctoFit Tracker app story](../1_Story/README.md) | [Next: Getting started - app frontend and backend creation :arrow_forward:](../3_GettingStarted/README.md)
+[Previous: The OctoFit Tracker app story](../1_Story/README.md) | [Next: Getting started - app frontend and backend creation](../3_GettingStarted/README.md)
