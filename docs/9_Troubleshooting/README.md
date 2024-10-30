@@ -10,7 +10,7 @@ This is a list of common issues that you might encounter during the workshop. If
 
 <details>
   <summary>I am not exactly getting the same result, so I cannot proceed to the next step. What shall I do?</summary>
-  We put the section together at the end in a way that you can copy-and-paste the code if you want to follow along. If you are not getting the same result, please check the section where you can copy-and-paste the code.
+  We put the section together at the end in a way that you can copy-and-paste the code if you want to follow along. If you are not getting the same result, please check the section where you can copy-and-paste the code. If you still cannot proceed after the workshop is over, please leave a feedback through the GitHub Discussion page: https://github.com/orgs/community/discussions/142536
 </details>
 
 <details>
@@ -33,6 +33,11 @@ This is a list of common issues that you might encounter during the workshop. If
 This is a list of common questions that you might have during the workshop. If you have a question, please check this list.
 
 <details>
+  <summary>How can I leave the feedback for the workshop or this resource?</summary>
+  We created a GitHub Discussion page just for this! Please leave us a feedback here, and we will really appreciate: https://github.com/orgs/community/discussions/142536
+</details>
+
+<details>
   <summary>How can I enable Copilot?</summary>
   For the workshop, it should be already enabled. If you are trying on your own, please make sure that you have a Copilot license attached to your GitHub account that you are logged in with. Please visit this page to find out more: https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot. If you need any help, please reach out to the GitHub Expert Service team.
 </details>
@@ -48,7 +53,6 @@ This is a list of common questions that you might have during the workshop. If y
 </details>
 
 <details>
-  <summary>How can I learn about or reach out t GitHub Expert Service?</summary>
+  <summary>How can I learn about or reach out about GitHub Expert Service?</summary>
   Please visit the following website to find out more about GitHub Expert Service: https://github.com/services
 </details>
-
