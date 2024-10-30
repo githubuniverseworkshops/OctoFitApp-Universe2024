@@ -15,7 +15,7 @@ In this workshop, you'll:
 3. Build key components of the **OctoFit Tracker** app
 4. Learn best practices and prompting techniques for working with **GitHub Copilot**
 
-> :blue_book: **NOTE**: Because we have only 20 minutes for the actual workshop, it is possible that we cannot complete everything. However, we will have the value of troubleshooting together, and there is also a [self-paced exercise](https://gh.io/octofit-tutorial) if you want to follow along later.
+> :blue_book: **NOTE**: Because we have only 20 minutes for the actual workshop, it is possible that we cannot complete everything. However, we will have the value of troubleshooting together, and there is also a [self-paced exercise - Coming Soon!](https://gh.io/octofit-tutorial) if you want to follow along later.
 
 ### Application Features
 
