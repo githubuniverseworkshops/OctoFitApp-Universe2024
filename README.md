@@ -6,7 +6,11 @@ Welcome to a custom **Copilot** workshop prepared by the **GitHub’s Expert Ser
 
 This workshop involves several technology stacks, therefore it is essential that you need to meet prerequisites as outlined in the prerequisites getting started if you want to follow along. Otherwise, please follow along and listen to the GitHub Expert Service team's instructor demo to see how it works in practice.
 
-> :blue_book: **NOTE**: This workshop will be conducted through **Codespace**, but you can find a full step-by-step self-paced guide that you can try later without Codespace:
+If you want to checkout this tutorial later after the workshop, please click on the links below:
+
+[gh.io/octofit-tutorial-codespace](https://gh.io/octofit-tutorial-codespace)
+
+> **NOTE**: This workshop will be conducted through **Codespace**, but you can find a full step-by-step self-paced guide that you can try later without Codespace:
 [**gh.io/octofit-tutorial - Coming Soon!**](https://gh.io/octofit-tutorial)
 
 ## Objectives and key takeaways

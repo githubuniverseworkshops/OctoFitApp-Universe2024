@@ -13,6 +13,10 @@ What's next? From here, you can continue to leverage **GitHub Copilot** to finis
 
 But we hope that you have learned a lot from this workshop and you can continue to build the application with **GitHub Copilot**.
 
+If you want to checkout this tutorial later after the workshop, please click on the links below:
+
+[gh.io/octofit-tutorial-codespace](https://gh.io/octofit-tutorial-codespace)
+
 Also, be sure to checkout self-paced documentation to build the application from scratch:
 
 [**gh.io/octofit-tutorial - Coming Soon!**](https://gh.io/octofit-tutorial)
