@@ -32,15 +32,14 @@ This is a list of common issues that you might encounter during the workshop. If
 
 This is a list of common questions that you might have during the workshop. If you have a question, please check this list.
 
-
 <details>
   <summary>How can I enable Copilot?</summary>
-  For the workshop, it should be already enabled. If you need any help, please reach out to the GitHub Expert Service team.
+  For the workshop, it should be already enabled. If you are trying on your own, please make sure that you have a Copilot license attached to your GitHub account that you are logged in with. Please visit this page to find out more: https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot. If you need any help, please reach out to the GitHub Expert Service team.
 </details>
 
 <details>
   <summary>Why is this not utilizing Copilot Worspace?</summary>
-  Copilot Workspace is a new GitHub feature that helps to bootstrap a lot of boilerplate codes and generating resources within the repository. We could have started with **Copilot Workspace** but we wanted to show you how to use Copilot in a more traditional way. If you are interested in learning more about Copilot Workspace, please check out the documentation:https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-workspace.
+  Copilot Workspace is a new GitHub feature that helps to bootstrap a lot of boilerplate codes and generating resources within the repository. We could have started with **Copilot Workspace** but we wanted to show you how to use Copilot in a more traditional way. If you are interested in learning more about Copilot Workspace, please check out the documentation: https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-workspace.
 </details>
 
 <details>
